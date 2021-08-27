@@ -44,7 +44,6 @@ const Events = mongoose.model("events", {
   banner: String,
   max: Number,
   registered: Number,
-  status: String,
 });
 
 const Registrations = mongoose.model("registrations", {
@@ -53,7 +52,7 @@ const Registrations = mongoose.model("registrations", {
   email: String,
   phone: String,
   branch: String,
-  year: Number,
+  year: String,
   school: String,
 });
 

@@ -1,5 +1,6 @@
 const express = require("express");
 const bcrypt = require("bcryptjs");
+const path = require("path");
 const { Users, Events, Registrations } = require("./mongoose");
 require("dotenv").config();
 
@@ -44,7 +45,7 @@ app.get("/check", async (req, res) => {
   }
 });
 
-app.get("add", async (req, res) => {
+app.get("/add", async (req, res) => {
   try {
     const check = await auth();
     if (check) {
@@ -68,7 +69,7 @@ app.get("add", async (req, res) => {
   } catch {}
 });
 
-app.get("update", async (req, res) => {
+app.get("/update", async (req, res) => {
   try {
     const check = await auth();
     if (check) {
@@ -95,7 +96,7 @@ app.get("update", async (req, res) => {
   } catch {}
 });
 
-app.get("register", async (req, res) => {
+app.get("/register", async (req, res) => {
   try {
     let newRegister = new Registrations({
       event: req.body.event,
