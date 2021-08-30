@@ -18,9 +18,9 @@ Syam666 <br> Haritha-ME
 ● qr_flutter: ^4.0.0<br>
 ● splashscreen: ^1.3.5<br>
 ●
-<i><strong>Direct Download Link</strong></i> [Click Here][link]
+<i><strong>Direct apk file Download Link</strong></i> [Click Here][link]
 
-[link]: https://user-images.githubusercontent.com/62179996/124650256-266d2280-deb7-11eb-9e99-35d94e96bb13.mp4
+[link]: https://drive.google.com/file/d/1B1ZY0DOMGnownAKuIl0WmcdqFeBiB3hz/view?usp=drivesdk
 
 <img src="https://user-images.githubusercontent.com/64770907/131341450-24617b4a-a087-459f-9b09-791300b8d89a.png" width="30%" align="left" padding='50'/>
 <img src="https://user-images.githubusercontent.com/64770907/131341455-da3f4cd1-5fc0-47dd-86b6-90932c52d465.png" width="30%" align="left" padding='50'/>
