@@ -18,7 +18,7 @@ Syam666 <br> Haritha-ME
 ● qr_flutter: ^4.0.0<br>
 ● splashscreen: ^1.3.5<br>
 ●
-<i><strong>Direct Download Link</strong></i>[Click Here][link]
+<i><strong>Direct Download Link</strong></i> [Click Here][link]
 
 [link]: https://user-images.githubusercontent.com/62179996/124650256-266d2280-deb7-11eb-9e99-35d94e96bb13.mp4
 
