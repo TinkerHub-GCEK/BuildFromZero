@@ -1,0 +1,292 @@
+define(['dart_sdk', 'packages/flutter_local_notifications/src/platform_specifics/android/enums.dart', 'packages/flutter_local_notifications/src/platform_specifics/android/notification_sound.dart', 'packages/flutter_local_notifications/src/platform_specifics/android/icon.dart', 'packages/flutter_local_notifications/src/platform_specifics/android/bitmap.dart', 'packages/flutter_local_notifications/src/platform_specifics/android/message.dart', 'packages/flutter_local_notifications/src/platform_specifics/android/styles/big_picture_style_information.dart', 'packages/flutter_local_notifications/src/platform_specifics/android/styles/big_text_style_information.dart', 'packages/flutter_local_notifications/src/platform_specifics/android/styles/inbox_style_information.dart', 'packages/flutter_local_notifications/src/platform_specifics/android/styles/messaging_style_information.dart', 'packages/flutter_local_notifications/src/platform_specifics/android/styles/media_style_information.dart', 'packages/flutter_local_notifications/src/platform_specifics/android/styles/default_style_information.dart'], (function load__packages__flutter_local_notifications__src__platform_specifics__android__method_channel_mappers_dart(dart_sdk, packages__flutter_local_notifications__src__platform_specifics__android__enums$46dart, packages__flutter_local_notifications__src__platform_specifics__android__notification_sound$46dart, packages__flutter_local_notifications__src__platform_specifics__android__icon$46dart, packages__flutter_local_notifications__src__platform_specifics__android__bitmap$46dart, packages__flutter_local_notifications__src__platform_specifics__android__message$46dart, packages__flutter_local_notifications__src__platform_specifics__android__styles__big_picture_style_information$46dart, packages__flutter_local_notifications__src__platform_specifics__android__styles__big_text_style_information$46dart, packages__flutter_local_notifications__src__platform_specifics__android__styles__inbox_style_information$46dart, packages__flutter_local_notifications__src__platform_specifics__android__styles__messaging_style_information$46dart, packages__flutter_local_notifications__src__platform_specifics__android__styles__media_style_information$46dart, packages__flutter_local_notifications__src__platform_specifics__android__styles__default_style_information$46dart) {
+  'use strict';
+  const core = dart_sdk.core;
+  const _js_helper = dart_sdk._js_helper;
+  const dart = dart_sdk.dart;
+  const dartx = dart_sdk.dartx;
+  const enums = packages__flutter_local_notifications__src__platform_specifics__android__enums$46dart.src__platform_specifics__android__enums;
+  const notification_sound = packages__flutter_local_notifications__src__platform_specifics__android__notification_sound$46dart.src__platform_specifics__android__notification_sound;
+  const icon = packages__flutter_local_notifications__src__platform_specifics__android__icon$46dart.src__platform_specifics__android__icon;
+  const bitmap = packages__flutter_local_notifications__src__platform_specifics__android__bitmap$46dart.src__platform_specifics__android__bitmap;
+  const message = packages__flutter_local_notifications__src__platform_specifics__android__message$46dart.src__platform_specifics__android__message;
+  const big_picture_style_information = packages__flutter_local_notifications__src__platform_specifics__android__styles__big_picture_style_information$46dart.src__platform_specifics__android__styles__big_picture_style_information;
+  const big_text_style_information = packages__flutter_local_notifications__src__platform_specifics__android__styles__big_text_style_information$46dart.src__platform_specifics__android__styles__big_text_style_information;
+  const inbox_style_information = packages__flutter_local_notifications__src__platform_specifics__android__styles__inbox_style_information$46dart.src__platform_specifics__android__styles__inbox_style_information;
+  const messaging_style_information = packages__flutter_local_notifications__src__platform_specifics__android__styles__messaging_style_information$46dart.src__platform_specifics__android__styles__messaging_style_information;
+  const media_style_information = packages__flutter_local_notifications__src__platform_specifics__android__styles__media_style_information$46dart.src__platform_specifics__android__styles__media_style_information;
+  const default_style_information = packages__flutter_local_notifications__src__platform_specifics__android__styles__default_style_information$46dart.src__platform_specifics__android__styles__default_style_information;
+  var method_channel_mappers = Object.create(dart.library);
+  var $addAll = dartx.addAll;
+  var $map = dartx.map;
+  var $toList = dartx.toList;
+  dart._checkModuleNullSafetyMode(false);
+  var T = {
+    IdentityMapOfString$Object: () => (T.IdentityMapOfString$Object = dart.constFn(_js_helper.IdentityMap$(core.String, core.Object)))(),
+    MapOfString$Object: () => (T.MapOfString$Object = dart.constFn(core.Map$(core.String, core.Object)))(),
+    VoidToMapOfString$Object: () => (T.VoidToMapOfString$Object = dart.constFn(dart.fnType(T.MapOfString$Object(), [])))(),
+    ObjectN: () => (T.ObjectN = dart.constFn(dart.nullable(core.Object)))(),
+    IdentityMapOfString$ObjectN: () => (T.IdentityMapOfString$ObjectN = dart.constFn(_js_helper.IdentityMap$(core.String, T.ObjectN())))(),
+    MapOfString$ObjectN: () => (T.MapOfString$ObjectN = dart.constFn(core.Map$(core.String, T.ObjectN())))(),
+    VoidToMapOfString$ObjectN: () => (T.VoidToMapOfString$ObjectN = dart.constFn(dart.fnType(T.MapOfString$ObjectN(), [])))(),
+    MessageToMapOfString$ObjectN: () => (T.MessageToMapOfString$ObjectN = dart.constFn(dart.fnType(T.MapOfString$ObjectN(), [message.Message])))(),
+    BigPictureStyleInformationN: () => (T.BigPictureStyleInformationN = dart.constFn(dart.nullable(big_picture_style_information.BigPictureStyleInformation)))(),
+    BigTextStyleInformationN: () => (T.BigTextStyleInformationN = dart.constFn(dart.nullable(big_text_style_information.BigTextStyleInformation)))(),
+    InboxStyleInformationN: () => (T.InboxStyleInformationN = dart.constFn(dart.nullable(inbox_style_information.InboxStyleInformation)))(),
+    MessagingStyleInformationN: () => (T.MessagingStyleInformationN = dart.constFn(dart.nullable(messaging_style_information.MessagingStyleInformation)))(),
+    MediaStyleInformationN: () => (T.MediaStyleInformationN = dart.constFn(dart.nullable(media_style_information.MediaStyleInformation)))(),
+    DefaultStyleInformationN: () => (T.DefaultStyleInformationN = dart.constFn(dart.nullable(default_style_information.DefaultStyleInformation)))()
+  };
+  const CT = Object.create({
+    _: () => (C, CT)
+  });
+  dart.defineLazy(CT, {
+    get C0() {
+      return C[0] = dart.const({
+        __proto__: default_style_information.DefaultStyleInformation.prototype,
+        [DefaultStyleInformation_htmlFormatTitle]: false,
+        [DefaultStyleInformation_htmlFormatContent]: false
+      });
+    }
+  }, false);
+  var C = [void 0];
+  var I = ["file:///C:/src/flutter/flutter/.pub-cache/hosted/pub.dartlang.org/flutter_local_notifications-5.0.0+4/lib/src/platform_specifics/android/method_channel_mappers.dart"];
+  var DefaultStyleInformation_htmlFormatTitle = dart.privateName(default_style_information, "DefaultStyleInformation.htmlFormatTitle");
+  var DefaultStyleInformation_htmlFormatContent = dart.privateName(default_style_information, "DefaultStyleInformation.htmlFormatContent");
+  method_channel_mappers['AndroidInitializationSettingsMapper|toMap'] = function AndroidInitializationSettingsMapper$124toMap($this) {
+    if ($this == null) dart.nullFailed(I[0], 20, 23, "#this");
+    return new (T.IdentityMapOfString$Object()).from(["defaultIcon", $this.defaultIcon]);
+  };
+  method_channel_mappers['AndroidInitializationSettingsMapper|get#toMap'] = function AndroidInitializationSettingsMapper$124get$35toMap($this) {
+    if ($this == null) dart.nullFailed(I[0], 20, 23, "#this");
+    return dart.fn(() => method_channel_mappers['AndroidInitializationSettingsMapper|toMap']($this), T.VoidToMapOfString$Object());
+  };
+  method_channel_mappers['MessageMapper|toMap'] = function MessageMapper$124toMap($this) {
+    let t3;
+    if ($this == null) dart.nullFailed(I[0], 24, 24, "#this");
+    return new (T.IdentityMapOfString$ObjectN()).from(["text", $this.text, "timestamp", $this.timestamp.millisecondsSinceEpoch, "person", (t3 = $this.person, t3 == null ? null : method_channel_mappers['PersonMapper|toMap'](t3)), "dataMimeType", $this.dataMimeType, "dataUri", $this.dataUri]);
+  };
+  method_channel_mappers['MessageMapper|get#toMap'] = function MessageMapper$124get$35toMap($this) {
+    if ($this == null) dart.nullFailed(I[0], 24, 24, "#this");
+    return dart.fn(() => method_channel_mappers['MessageMapper|toMap']($this), T.VoidToMapOfString$ObjectN());
+  };
+  method_channel_mappers['AndroidNotificationChannelGroupMapper|toMap'] = function AndroidNotificationChannelGroupMapper$124toMap($this) {
+    if ($this == null) dart.nullFailed(I[0], 35, 24, "#this");
+    return new (T.IdentityMapOfString$ObjectN()).from(["id", $this.id, "name", $this.name, "description", $this.description]);
+  };
+  method_channel_mappers['AndroidNotificationChannelGroupMapper|get#toMap'] = function AndroidNotificationChannelGroupMapper$124get$35toMap($this) {
+    if ($this == null) dart.nullFailed(I[0], 35, 24, "#this");
+    return dart.fn(() => method_channel_mappers['AndroidNotificationChannelGroupMapper|toMap']($this), T.VoidToMapOfString$ObjectN());
+  };
+  method_channel_mappers['AndroidNotificationChannelMapper|toMap'] = function AndroidNotificationChannelMapper$124toMap($this) {
+    let t7, t7$, t7$0, t7$1, t7$2;
+    if ($this == null) dart.nullFailed(I[0], 43, 24, "#this");
+    t7$2 = new (T.IdentityMapOfString$ObjectN()).from(["id", $this.id, "name", $this.name, "description", $this.description, "groupId", $this.groupId, "showBadge", $this.showBadge, "importance", $this.importance.value, "playSound", $this.playSound, "enableVibration", $this.enableVibration, "vibrationPattern", $this.vibrationPattern, "enableLights", $this.enableLights, "ledColorAlpha", (t7 = $this.ledColor, t7 == null ? null : t7.alpha), "ledColorRed", (t7$ = $this.ledColor, t7$ == null ? null : t7$.red), "ledColorGreen", (t7$0 = $this.ledColor, t7$0 == null ? null : t7$0.green), "ledColorBlue", (t7$1 = $this.ledColor, t7$1 == null ? null : t7$1.blue), "channelAction", enums.AndroidNotificationChannelAction.createIfNotExists.index]);
+    return (() => {
+      t7$2[$addAll](method_channel_mappers._convertNotificationSoundToMap($this.sound));
+      return t7$2;
+    })();
+  };
+  method_channel_mappers['AndroidNotificationChannelMapper|get#toMap'] = function AndroidNotificationChannelMapper$124get$35toMap($this) {
+    if ($this == null) dart.nullFailed(I[0], 43, 24, "#this");
+    return dart.fn(() => method_channel_mappers['AndroidNotificationChannelMapper|toMap']($this), T.VoidToMapOfString$ObjectN());
+  };
+  method_channel_mappers._convertNotificationSoundToMap = function _convertNotificationSoundToMap(sound) {
+    if (notification_sound.RawResourceAndroidNotificationSound.is(sound)) {
+      return new (T.IdentityMapOfString$Object()).from(["sound", sound.sound, "soundSource", enums.AndroidNotificationSoundSource.rawResource.index]);
+    } else if (notification_sound.UriAndroidNotificationSound.is(sound)) {
+      return new (T.IdentityMapOfString$Object()).from(["sound", sound.sound, "soundSource", enums.AndroidNotificationSoundSource.uri.index]);
+    } else {
+      return new (T.IdentityMapOfString$Object()).new();
+    }
+  };
+  method_channel_mappers['PersonMapper|toMap'] = function PersonMapper$124toMap($this) {
+    let t9;
+    if ($this == null) dart.nullFailed(I[0], 81, 24, "#this");
+    t9 = new (T.IdentityMapOfString$ObjectN()).from(["bot", $this.bot, "important", $this.important, "key", $this.key, "name", $this.name, "uri", $this.uri]);
+    return (() => {
+      t9[$addAll](method_channel_mappers['PersonMapper|_convertIconToMap']($this));
+      return t9;
+    })();
+  };
+  method_channel_mappers['PersonMapper|get#toMap'] = function PersonMapper$124get$35toMap($this) {
+    if ($this == null) dart.nullFailed(I[0], 81, 24, "#this");
+    return dart.fn(() => method_channel_mappers['PersonMapper|toMap']($this), T.VoidToMapOfString$ObjectN());
+  };
+  method_channel_mappers['PersonMapper|_convertIconToMap'] = function PersonMapper$124_convertIconToMap($this) {
+    if ($this == null) dart.nullFailed(I[0], 89, 23, "#this");
+    if (icon.DrawableResourceAndroidIcon.is($this.icon)) {
+      return new (T.IdentityMapOfString$Object()).from(["icon", dart.nullCheck($this.icon).icon, "iconSource", enums.AndroidIconSource.drawableResource.index]);
+    } else if (icon.BitmapFilePathAndroidIcon.is($this.icon)) {
+      return new (T.IdentityMapOfString$Object()).from(["icon", dart.nullCheck($this.icon).icon, "iconSource", enums.AndroidIconSource.bitmapFilePath.index]);
+    } else if (icon.ContentUriAndroidIcon.is($this.icon)) {
+      return new (T.IdentityMapOfString$Object()).from(["icon", dart.nullCheck($this.icon).icon, "iconSource", enums.AndroidIconSource.contentUri.index]);
+    } else if (icon.FlutterBitmapAssetAndroidIcon.is($this.icon)) {
+      return new (T.IdentityMapOfString$Object()).from(["icon", dart.nullCheck($this.icon).icon, "iconSource", enums.AndroidIconSource.flutterBitmapAsset.index]);
+    } else {
+      return new (T.IdentityMapOfString$Object()).new();
+    }
+  };
+  method_channel_mappers['PersonMapper|get#_convertIconToMap'] = function PersonMapper$124get$35_convertIconToMap($this) {
+    if ($this == null) dart.nullFailed(I[0], 89, 23, "#this");
+    return dart.fn(() => method_channel_mappers['PersonMapper|_convertIconToMap']($this), T.VoidToMapOfString$Object());
+  };
+  method_channel_mappers['DefaultStyleInformationMapper|toMap'] = function DefaultStyleInformationMapper$124toMap($this) {
+    if ($this == null) dart.nullFailed(I[0], 117, 24, "#this");
+    return method_channel_mappers._convertDefaultStyleInformationToMap($this);
+  };
+  method_channel_mappers['DefaultStyleInformationMapper|get#toMap'] = function DefaultStyleInformationMapper$124get$35toMap($this) {
+    if ($this == null) dart.nullFailed(I[0], 117, 24, "#this");
+    return dart.fn(() => method_channel_mappers['DefaultStyleInformationMapper|toMap']($this), T.VoidToMapOfString$ObjectN());
+  };
+  method_channel_mappers._convertDefaultStyleInformationToMap = function _convertDefaultStyleInformationToMap(styleInformation) {
+    if (styleInformation == null) dart.nullFailed(I[0], 121, 33, "styleInformation");
+    return new (T.IdentityMapOfString$ObjectN()).from(["htmlFormatContent", styleInformation.htmlFormatContent, "htmlFormatTitle", styleInformation.htmlFormatTitle]);
+  };
+  method_channel_mappers['BigPictureStyleInformationMapper|toMap'] = function BigPictureStyleInformationMapper$124toMap($this) {
+    let t15;
+    if ($this == null) dart.nullFailed(I[0], 128, 24, "#this");
+    t15 = method_channel_mappers._convertDefaultStyleInformationToMap($this);
+    return (() => {
+      t15[$addAll](method_channel_mappers['BigPictureStyleInformationMapper|_convertBigPictureToMap']($this));
+      t15[$addAll](method_channel_mappers['BigPictureStyleInformationMapper|_convertLargeIconToMap']($this));
+      t15[$addAll](new (T.IdentityMapOfString$ObjectN()).from(["contentTitle", $this.contentTitle, "summaryText", $this.summaryText, "htmlFormatContentTitle", $this.htmlFormatContentTitle, "htmlFormatSummaryText", $this.htmlFormatSummaryText, "hideExpandedLargeIcon", $this.hideExpandedLargeIcon]));
+      return t15;
+    })();
+  };
+  method_channel_mappers['BigPictureStyleInformationMapper|get#toMap'] = function BigPictureStyleInformationMapper$124get$35toMap($this) {
+    if ($this == null) dart.nullFailed(I[0], 128, 24, "#this");
+    return dart.fn(() => method_channel_mappers['BigPictureStyleInformationMapper|toMap']($this), T.VoidToMapOfString$ObjectN());
+  };
+  method_channel_mappers['BigPictureStyleInformationMapper|_convertBigPictureToMap'] = function BigPictureStyleInformationMapper$124_convertBigPictureToMap($this) {
+    if ($this == null) dart.nullFailed(I[0], 139, 23, "#this");
+    if (bitmap.DrawableResourceAndroidBitmap.is($this.bigPicture)) {
+      return new (T.IdentityMapOfString$Object()).from(["bigPicture", $this.bigPicture.bitmap, "bigPictureBitmapSource", enums.AndroidBitmapSource.drawable.index]);
+    } else if (bitmap.FilePathAndroidBitmap.is($this.bigPicture)) {
+      return new (T.IdentityMapOfString$Object()).from(["bigPicture", $this.bigPicture.bitmap, "bigPictureBitmapSource", enums.AndroidBitmapSource.filePath.index]);
+    } else {
+      return new (T.IdentityMapOfString$Object()).new();
+    }
+  };
+  method_channel_mappers['BigPictureStyleInformationMapper|get#_convertBigPictureToMap'] = function BigPictureStyleInformationMapper$124get$35_convertBigPictureToMap($this) {
+    if ($this == null) dart.nullFailed(I[0], 139, 23, "#this");
+    return dart.fn(() => method_channel_mappers['BigPictureStyleInformationMapper|_convertBigPictureToMap']($this), T.VoidToMapOfString$Object());
+  };
+  method_channel_mappers['BigPictureStyleInformationMapper|_convertLargeIconToMap'] = function BigPictureStyleInformationMapper$124_convertLargeIconToMap($this) {
+    if ($this == null) dart.nullFailed(I[0], 155, 23, "#this");
+    if (bitmap.DrawableResourceAndroidBitmap.is($this.largeIcon)) {
+      return new (T.IdentityMapOfString$Object()).from(["largeIcon", dart.nullCheck($this.largeIcon).bitmap, "largeIconBitmapSource", enums.AndroidBitmapSource.drawable.index]);
+    } else if (bitmap.FilePathAndroidBitmap.is($this.largeIcon)) {
+      return new (T.IdentityMapOfString$Object()).from(["largeIcon", dart.nullCheck($this.largeIcon).bitmap, "largeIconBitmapSource", enums.AndroidBitmapSource.filePath.index]);
+    } else {
+      return new (T.IdentityMapOfString$Object()).new();
+    }
+  };
+  method_channel_mappers['BigPictureStyleInformationMapper|get#_convertLargeIconToMap'] = function BigPictureStyleInformationMapper$124get$35_convertLargeIconToMap($this) {
+    if ($this == null) dart.nullFailed(I[0], 155, 23, "#this");
+    return dart.fn(() => method_channel_mappers['BigPictureStyleInformationMapper|_convertLargeIconToMap']($this), T.VoidToMapOfString$Object());
+  };
+  method_channel_mappers['BigTexStyleInformationMapper|toMap'] = function BigTexStyleInformationMapper$124toMap($this) {
+    let t21;
+    if ($this == null) dart.nullFailed(I[0], 173, 24, "#this");
+    t21 = method_channel_mappers._convertDefaultStyleInformationToMap($this);
+    return (() => {
+      t21[$addAll](new (T.IdentityMapOfString$ObjectN()).from(["bigText", $this.bigText, "htmlFormatBigText", $this.htmlFormatBigText, "contentTitle", $this.contentTitle, "htmlFormatContentTitle", $this.htmlFormatContentTitle, "summaryText", $this.summaryText, "htmlFormatSummaryText", $this.htmlFormatSummaryText]));
+      return t21;
+    })();
+  };
+  method_channel_mappers['BigTexStyleInformationMapper|get#toMap'] = function BigTexStyleInformationMapper$124get$35toMap($this) {
+    if ($this == null) dart.nullFailed(I[0], 173, 24, "#this");
+    return dart.fn(() => method_channel_mappers['BigTexStyleInformationMapper|toMap']($this), T.VoidToMapOfString$ObjectN());
+  };
+  method_channel_mappers['InboxStyleInformationMapper|toMap'] = function InboxStyleInformationMapper$124toMap($this) {
+    let t23;
+    if ($this == null) dart.nullFailed(I[0], 185, 24, "#this");
+    t23 = method_channel_mappers._convertDefaultStyleInformationToMap($this);
+    return (() => {
+      t23[$addAll](new (T.IdentityMapOfString$ObjectN()).from(["contentTitle", $this.contentTitle, "htmlFormatContentTitle", $this.htmlFormatContentTitle, "summaryText", $this.summaryText, "htmlFormatSummaryText", $this.htmlFormatSummaryText, "lines", $this.lines, "htmlFormatLines", $this.htmlFormatLines]));
+      return t23;
+    })();
+  };
+  method_channel_mappers['InboxStyleInformationMapper|get#toMap'] = function InboxStyleInformationMapper$124get$35toMap($this) {
+    if ($this == null) dart.nullFailed(I[0], 185, 24, "#this");
+    return dart.fn(() => method_channel_mappers['InboxStyleInformationMapper|toMap']($this), T.VoidToMapOfString$ObjectN());
+  };
+  method_channel_mappers['MessagingStyleInformationMapper|toMap'] = function MessagingStyleInformationMapper$124toMap($this) {
+    let t26, t25;
+    if ($this == null) dart.nullFailed(I[0], 197, 24, "#this");
+    t25 = method_channel_mappers._convertDefaultStyleInformationToMap($this);
+    return (() => {
+      t25[$addAll](new (T.IdentityMapOfString$ObjectN()).from(["person", method_channel_mappers['PersonMapper|toMap']($this.person), "conversationTitle", $this.conversationTitle, "groupConversation", $this.groupConversation, "messages", (t26 = $this.messages, t26 == null ? null : t26[$map](T.MapOfString$ObjectN(), dart.fn(m => {
+          if (m == null) dart.nullFailed(I[0], 203, 18, "m");
+          return method_channel_mappers['MessageMapper|toMap'](m);
+        }, T.MessageToMapOfString$ObjectN()))[$toList]())]));
+      return t25;
+    })();
+  };
+  method_channel_mappers['MessagingStyleInformationMapper|get#toMap'] = function MessagingStyleInformationMapper$124get$35toMap($this) {
+    if ($this == null) dart.nullFailed(I[0], 197, 24, "#this");
+    return dart.fn(() => method_channel_mappers['MessagingStyleInformationMapper|toMap']($this), T.VoidToMapOfString$ObjectN());
+  };
+  method_channel_mappers['AndroidNotificationDetailsMapper|toMap'] = function AndroidNotificationDetailsMapper$124toMap($this) {
+    let t27, t27$, t27$0, t27$1, t27$2, t27$3, t27$4, t27$5, t27$6, t27$7;
+    if ($this == null) dart.nullFailed(I[0], 209, 24, "#this");
+    t27$7 = new (T.IdentityMapOfString$ObjectN()).from(["icon", $this.icon, "channelId", $this.channelId, "channelName", $this.channelName, "channelDescription", $this.channelDescription, "channelShowBadge", $this.channelShowBadge, "channelAction", $this.channelAction.index, "importance", $this.importance.value, "priority", $this.priority.value, "playSound", $this.playSound, "enableVibration", $this.enableVibration, "vibrationPattern", $this.vibrationPattern, "groupKey", $this.groupKey, "setAsGroupSummary", $this.setAsGroupSummary, "groupAlertBehavior", $this.groupAlertBehavior.index, "autoCancel", $this.autoCancel, "ongoing", $this.ongoing, "colorAlpha", (t27 = $this.color, t27 == null ? null : t27.alpha), "colorRed", (t27$ = $this.color, t27$ == null ? null : t27$.red), "colorGreen", (t27$0 = $this.color, t27$0 == null ? null : t27$0.green), "colorBlue", (t27$1 = $this.color, t27$1 == null ? null : t27$1.blue), "onlyAlertOnce", $this.onlyAlertOnce, "showWhen", $this.showWhen, "when", $this.when, "usesChronometer", $this.usesChronometer, "showProgress", $this.showProgress, "maxProgress", $this.maxProgress, "progress", $this.progress, "indeterminate", $this.indeterminate, "enableLights", $this.enableLights, "ledColorAlpha", (t27$2 = $this.ledColor, t27$2 == null ? null : t27$2.alpha), "ledColorRed", (t27$3 = $this.ledColor, t27$3 == null ? null : t27$3.red), "ledColorGreen", (t27$4 = $this.ledColor, t27$4 == null ? null : t27$4.green), "ledColorBlue", (t27$5 = $this.ledColor, t27$5 == null ? null : t27$5.blue), "ledOnMs", $this.ledOnMs, "ledOffMs", $this.ledOffMs, "ticker", $this.ticker, "visibility", (t27$6 = $this.visibility, t27$6 == null ? null : t27$6.index), "timeoutAfter", $this.timeoutAfter, "category", $this.category, "fullScreenIntent", $this.fullScreenIntent, "shortcutId", $this.shortcutId, "additionalFlags", $this.additionalFlags, "subText", $this.subText, "tag", $this.tag]);
+    return (() => {
+      t27$7[$addAll](method_channel_mappers['AndroidNotificationDetailsMapper|_convertStyleInformationToMap']($this));
+      t27$7[$addAll](method_channel_mappers._convertNotificationSoundToMap($this.sound));
+      t27$7[$addAll](method_channel_mappers['AndroidNotificationDetailsMapper|_convertLargeIconToMap']($this));
+      return t27$7;
+    })();
+  };
+  method_channel_mappers['AndroidNotificationDetailsMapper|get#toMap'] = function AndroidNotificationDetailsMapper$124get$35toMap($this) {
+    if ($this == null) dart.nullFailed(I[0], 209, 24, "#this");
+    return dart.fn(() => method_channel_mappers['AndroidNotificationDetailsMapper|toMap']($this), T.VoidToMapOfString$ObjectN());
+  };
+  method_channel_mappers['AndroidNotificationDetailsMapper|_convertStyleInformationToMap'] = function AndroidNotificationDetailsMapper$124_convertStyleInformationToMap($this) {
+    let t29, t29$, t29$0, t29$1, t29$2, t29$3;
+    if ($this == null) dart.nullFailed(I[0], 259, 24, "#this");
+    if (big_picture_style_information.BigPictureStyleInformation.is($this.styleInformation)) {
+      return new (T.IdentityMapOfString$ObjectN()).from(["style", enums.AndroidNotificationStyle.bigPicture.index, "styleInformation", (t29 = T.BigPictureStyleInformationN().as($this.styleInformation), t29 == null ? null : method_channel_mappers['BigPictureStyleInformationMapper|toMap'](t29))]);
+    } else if (big_text_style_information.BigTextStyleInformation.is($this.styleInformation)) {
+      return new (T.IdentityMapOfString$ObjectN()).from(["style", enums.AndroidNotificationStyle.bigText.index, "styleInformation", (t29$ = T.BigTextStyleInformationN().as($this.styleInformation), t29$ == null ? null : method_channel_mappers['BigTexStyleInformationMapper|toMap'](t29$))]);
+    } else if (inbox_style_information.InboxStyleInformation.is($this.styleInformation)) {
+      return new (T.IdentityMapOfString$ObjectN()).from(["style", enums.AndroidNotificationStyle.inbox.index, "styleInformation", (t29$0 = T.InboxStyleInformationN().as($this.styleInformation), t29$0 == null ? null : method_channel_mappers['InboxStyleInformationMapper|toMap'](t29$0))]);
+    } else if (messaging_style_information.MessagingStyleInformation.is($this.styleInformation)) {
+      return new (T.IdentityMapOfString$ObjectN()).from(["style", enums.AndroidNotificationStyle.messaging.index, "styleInformation", (t29$1 = T.MessagingStyleInformationN().as($this.styleInformation), t29$1 == null ? null : method_channel_mappers['MessagingStyleInformationMapper|toMap'](t29$1))]);
+    } else if (media_style_information.MediaStyleInformation.is($this.styleInformation)) {
+      return new (T.IdentityMapOfString$ObjectN()).from(["style", enums.AndroidNotificationStyle.media.index, "styleInformation", (t29$2 = T.MediaStyleInformationN().as($this.styleInformation), t29$2 == null ? null : method_channel_mappers['DefaultStyleInformationMapper|toMap'](t29$2))]);
+    } else if (default_style_information.DefaultStyleInformation.is($this.styleInformation)) {
+      return new (T.IdentityMapOfString$ObjectN()).from(["style", enums.AndroidNotificationStyle.defaultStyle.index, "styleInformation", (t29$3 = T.DefaultStyleInformationN().as($this.styleInformation), t29$3 == null ? null : method_channel_mappers['DefaultStyleInformationMapper|toMap'](t29$3))]);
+    } else {
+      return new (T.IdentityMapOfString$Object()).from(["style", enums.AndroidNotificationStyle.defaultStyle.index, "styleInformation", method_channel_mappers['DefaultStyleInformationMapper|toMap'](C[0] || CT.C0)]);
+    }
+  };
+  method_channel_mappers['AndroidNotificationDetailsMapper|get#_convertStyleInformationToMap'] = function AndroidNotificationDetailsMapper$124get$35_convertStyleInformationToMap($this) {
+    if ($this == null) dart.nullFailed(I[0], 259, 24, "#this");
+    return dart.fn(() => method_channel_mappers['AndroidNotificationDetailsMapper|_convertStyleInformationToMap']($this), T.VoidToMapOfString$ObjectN());
+  };
+  method_channel_mappers['AndroidNotificationDetailsMapper|_convertLargeIconToMap'] = function AndroidNotificationDetailsMapper$124_convertLargeIconToMap($this) {
+    if ($this == null) dart.nullFailed(I[0], 304, 23, "#this");
+    if (bitmap.DrawableResourceAndroidBitmap.is($this.largeIcon)) {
+      return new (T.IdentityMapOfString$Object()).from(["largeIcon", dart.nullCheck($this.largeIcon).bitmap, "largeIconBitmapSource", enums.AndroidBitmapSource.drawable.index]);
+    } else if (bitmap.FilePathAndroidBitmap.is($this.largeIcon)) {
+      return new (T.IdentityMapOfString$Object()).from(["largeIcon", dart.nullCheck($this.largeIcon).bitmap, "largeIconBitmapSource", enums.AndroidBitmapSource.filePath.index]);
+    } else {
+      return new (T.IdentityMapOfString$Object()).new();
+    }
+  };
+  method_channel_mappers['AndroidNotificationDetailsMapper|get#_convertLargeIconToMap'] = function AndroidNotificationDetailsMapper$124get$35_convertLargeIconToMap($this) {
+    if ($this == null) dart.nullFailed(I[0], 304, 23, "#this");
+    return dart.fn(() => method_channel_mappers['AndroidNotificationDetailsMapper|_convertLargeIconToMap']($this), T.VoidToMapOfString$Object());
+  };
+  dart.trackLibraries("packages/flutter_local_notifications/src/platform_specifics/android/method_channel_mappers.dart", {
+    "package:flutter_local_notifications/src/platform_specifics/android/method_channel_mappers.dart": method_channel_mappers
+  }, {
+  }, '{"version":3,"sourceRoot":"","sources":["method_channel_mappers.dart"],"names":[],"mappings":"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","file":"../../../../../../../../../../../packages/flutter_local_notifications/src/platform_specifics/android/method_channel_mappers.dart.lib.js"}');
+  // Exports:
+  return {
+    src__platform_specifics__android__method_channel_mappers: method_channel_mappers
+  };
+}));
+
+//# sourceMappingURL=method_channel_mappers.dart.lib.js.map

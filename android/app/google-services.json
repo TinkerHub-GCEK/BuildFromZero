@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "935754046891",
+    "project_id": "bfz-gcek",
+    "storage_bucket": "bfz-gcek.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:935754046891:android:bd04985be4033a57b586ee",
+        "android_client_info": {
+          "package_name": "com.example.visitor"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "935754046891-a0n6qdsoh0bimcjfqppb9lvkd07b0mc5.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB3CZpW0saC1nmian08Qga1hGcsa_ELHaU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "935754046891-a0n6qdsoh0bimcjfqppb9lvkd07b0mc5.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
