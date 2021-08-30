@@ -25,11 +25,11 @@ export default {
 <style scoped>
 .wrap {
   display: block;
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
-  bottom: 0;
   right: 0;
+  bottom: 0;
   display: grid;
   place-items: center;
   background: rgba(0, 0, 0, 0.75);
@@ -40,6 +40,10 @@ export default {
 .popup {
   width: 90%;
   max-width: 36em;
+  height: auto;
+  max-height: 90vh;
+  overflow: hidden;
+  overflow-y: auto;
   padding: 2em;
   text-align: center;
   background-color: rgba(20, 20, 40, 0.75);

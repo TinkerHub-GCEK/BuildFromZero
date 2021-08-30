@@ -3,17 +3,27 @@
     <div class="popup">
       <h2>Create Event</h2>
       <Label>Event Title</Label>
-      <input type="text" placeholder="Type Event Name Here" />
+      <input v-model="event" type="text" placeholder="Type Event Name Here" />
       <Label>Location</Label>
-      <input type="text" placeholder="Type Event Location Here" />
+      <input
+        v-model="location"
+        type="text"
+        placeholder="Type Event Location Here"
+      />
       <Label>Event Date</Label>
-      <input type="date" />
+      <input v-model="date" type="date" />
       <Label>Event Time</Label>
-      <input type="time" />
+      <input v-model="time" type="time" />
       <Label>Event Description</Label>
-      <textarea placeholder="Type Event Description Here" />
+      <div class="theme">
+        <quillEditor v-model:value="description" :options="config" />
+      </div>
       <Label>Maximum Registrations</Label>
-      <input type="number" />
+      <input
+        v-model="max"
+        type="number"
+        placeholder="Type Number Of Maximum Registrations Here"
+      />
       <Label>Event Banner/Poster</Label>
       <input type="file" v-show="false" />
       <button style="display: block; text-align: left">Upload</button>
@@ -24,11 +34,39 @@
 </template>
 
 <script>
+import { quillEditor } from "vue3-quill";
+
 export default {
   name: "Create",
 
+  data() {
+    return {
+      config: {
+        placeholder: "Type Event Description Here",
+        modules: {
+          toolbar: [
+            ["bold", "italic", "underline", "strike"],
+            [{ list: "ordered" }, { list: "bullet" }],
+            [{ script: "sub" }, { script: "super" }],
+          ],
+        },
+      },
+      event: this.current ? this.current.event : "",
+      date: this.current ? this.current.date : "",
+      time: this.current ? this.current.time : "",
+      location: this.current ? this.current.location : "",
+      description: this.current ? this.current.description : "",
+      max: this.current ? this.current.max : 0,
+    };
+  },
+
+  components: {
+    quillEditor,
+  },
+
   props: {
     toggleCreate: Function,
+    current: Object,
   },
 };
 </script>
@@ -61,6 +99,22 @@ export default {
   backdrop-filter: blur(0.5em);
   border-radius: 0.625em;
   box-shadow: 0 0 0.5em 0.0625em rgba(0, 0, 0, 0.1);
+}
+
+.theme {
+  background: #ffffff;
+  border-radius: 0.625em;
+  color: #333;
+  font-family: "Poppins", Arial, Helvetica, sans-serif;
+}
+
+.ql-toolbar.ql-snow,
+.ql-editor.ql-blank {
+  border: none;
+}
+
+.ql-active {
+  color: rgb(0, 255, 191) !important;
 }
 
 label {
