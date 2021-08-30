@@ -14,11 +14,14 @@ import 'package:visitor_tracker/screens/administrator/admin_option.dart';
 import 'package:visitor_tracker/screens/administrator/a_qr_scan.dart';
 import 'package:visitor_tracker/screens/administrator/a_uploaded_data.dart';
 import 'package:visitor_tracker/screens/homescreen.dart';
+import 'package:visitor_tracker/screens/login.dart';
+import 'package:visitor_tracker/screens/signup.dart';
 import 'package:visitor_tracker/screens/visitor/models/visitor_model.dart';
 import 'package:visitor_tracker/screens/visitor/visitor_option.dart';
 import 'package:visitor_tracker/screens/visitor/v_detail_entry.dart';
 import 'package:visitor_tracker/screens/visitor/v_qr_gen.dart';
 import 'package:visitor_tracker/services/auth_state.dart';
+import 'package:visitor_tracker/utils/onboarding.dart';
 import 'package:visitor_tracker/utils/spalsh_screen.dart';
 
 const AndroidNotificationChannel channel = AndroidNotificationChannel(
@@ -183,7 +186,9 @@ class _MyAppState extends State<MyApp> {
       home: SplashScreenPage(),
       routes: {
         "/home": (context) => HomeScreen(),
-        
+        // "/login": (context) => LoginScreen(),
+        // "/signup": (context) => SignUpScreen(),
+        "/auth": (context) => Auth(),
         "/visitoroption": (context) => VisitorOption(),
         "/visitordetails": (context) => FutureBuilder(
               future: Hive.openBox(

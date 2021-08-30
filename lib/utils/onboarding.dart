@@ -64,7 +64,7 @@ class _OnBoardingPageState extends State<OnBoardingPage> {
         PageViewModel(
           title: "How to Join as Admin",
           body:
-              "Enter Shop details and generate QR Code for Visitors to get shop details",
+              "Enter Shop details and generate QR Code for Visitors to get shop detailss",
           image: _buildImage('admin-bfz.jpg'),
           decoration: pageDecoration,
         ),

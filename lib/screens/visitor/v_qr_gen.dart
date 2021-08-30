@@ -39,7 +39,7 @@ class _QRCodeGeneratorState extends State<QRCodeGenerator> {
                   style: TextStyle(
                     fontSize: 30,
                     fontWeight: FontWeight.bold,
-                    color: Color(0xff6C63FF),
+                    color: Colors.black,
                   ),
                 ),
                 SizedBox(
