@@ -13,9 +13,11 @@ Syam666 <br> Haritha-ME
 ● How to Join as a Visitor ? Scan the QR code to get the details of the shop that you have visited.<br>
 ● If you join as a Visitor, you get an option to scan the QR code. Once the code is scanned, you can get the details of the shop you have visited.<br>
 ● If you join as an Admin, you will get an option to enter the shop details. The details entered here will be visible to the visitors when they scan the QR code. <br> The Admin collects the details of the visitors to upload to the online database. As an admin, you can manage your visitors and alarm them using push notifications in case of any emergency.
-
-● How to Join as Admin ? Enter the Shop Details and generate the QR code for visitors so that they get the shop details when they scan the code.<br>
-● How to Join as a Visitor ? Scan the QR code to get the details of the shop that you have visited.<br>
+# Libraries Used
+● path_provider: ^2.0.1<br>
+● qr_flutter: ^4.0.0<br>
+● splashscreen: ^1.3.5<br>
+●
 
 
 <img src="https://user-images.githubusercontent.com/64770907/131341450-24617b4a-a087-459f-9b09-791300b8d89a.png" width="30%" align="left" padding='50'/>
