@@ -7,7 +7,7 @@ list. You get the freedom to choose as you wish : either as an Admin or as a Vis
 ## Team Members and GitHub ID :
 -Syam666 <br>-Haritha-ME
 
-How it works ?
+# How it works ?<br>
 ● This application can be used either as Admin or Visitor depending upon your need<br>
 ● How to Join as Admin ? Enter the Shop Details and generate the QR code for visitors so that they get the shop details when they scan the code.<br>
 ● How to Join as a Visitor ? Scan the QR code to get the details of the shop that you have visited.<br>
