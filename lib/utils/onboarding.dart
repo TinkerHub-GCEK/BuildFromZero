@@ -71,7 +71,7 @@ class _OnBoardingPageState extends State<OnBoardingPage> {
         PageViewModel(
           title: "How to Join as Visitor ",
           body:
-              "Scan QR code for get the details of the shop that you have visited",
+              "Scan QR code to get the details of the shop that you have visited",
           image: _buildImage('visitor-bfz.jpg'),
           decoration: pageDecoration,
         ),
