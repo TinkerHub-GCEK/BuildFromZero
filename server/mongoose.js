@@ -36,12 +36,11 @@ const Users = mongoose.model("users", {
 
 const Events = mongoose.model("events", {
   event: String,
-  title: String,
+  image: String,
   description: String,
   date: String,
   time: String,
   location: String,
-  banner: String,
   max: Number,
   registered: Number,
 });
@@ -53,7 +52,6 @@ const Registrations = mongoose.model("registrations", {
   phone: String,
   branch: String,
   year: String,
-  school: String,
 });
 
 module.exports = { Users, Events, Registrations };
