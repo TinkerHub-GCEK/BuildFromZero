@@ -2,18 +2,21 @@ import { createStore } from "vuex";
 
 export default createStore({
   state: {
-    logged: true,
+    logged: false,
+    key: "",
+    email: "",
   },
 
   mutations: {
     changeLogin(state) {
       state.logged = !state.logged;
     },
-  },
 
-  actions: {
-    login(context) {
-      context.commit("changeLogin");
+    changeKey(state, email, key) {
+      state.email = email;
+      state.key = key;
     },
   },
+
+  actions: {},
 });

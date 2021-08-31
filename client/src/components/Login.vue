@@ -3,21 +3,61 @@
     <div class="popup">
       <h2>Login</h2>
       <Label>Email</Label>
-      <input type="email" placeholder="Type Your Email Here" />
+      <input v-model="email" type="email" placeholder="Type Your Email Here" />
       <Label>Password</Label>
-      <input type="password" placeholder="Type Your Password Here" />
-      <button @click="toggleLogin">Login</button>
+      <input
+        v-model="password"
+        type="password"
+        placeholder="Type Your Password Here"
+      />
+      <button @click="login">Login</button>
       <button @click="toggleLogin">Cancel</button>
     </div>
   </div>
 </template>
 
 <script>
+import fetchData from "@/fetchData.js";
+
 export default {
   name: "Login",
 
+  data() {
+    return {
+      email: "",
+      password: "",
+    };
+  },
+
   props: {
     toggleLogin: Function,
+  },
+
+  methods: {
+    login() {
+      if (this.email && this.password) {
+        let email = this.email.toLowerCase().trim();
+        fetchData(
+          "check",
+          {
+            email: email,
+            pass: this.password,
+          },
+          (json) => {
+            json = JSON.parse(json);
+            if (json.status) {
+              this.$store.commit("changeKey", email, json.api);
+              this.$store.commit("changeLogin");
+              this.toggleLogin();
+            } else {
+              window.alert("Check Again!");
+            }
+          }
+        );
+      } else {
+        window.alert("All fields are required");
+      }
+    },
   },
 };
 </script>

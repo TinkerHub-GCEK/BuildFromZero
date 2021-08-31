@@ -21,15 +21,24 @@
       <Label>Maximum Registrations</Label>
       <input
         v-model="max"
-        value="0"
         type="number"
         placeholder="Type Number Of Maximum Registrations Here"
       />
       <p>*If don't want maximum registration limit leave it to 0</p>
       <Label>Event Banner/Poster</Label>
-      <input type="file" v-show="false" />
-      <button style="display: block; text-align: left">Upload</button>
-      <button @click="toggleCreate">Create</button>
+      <input
+        @change="fileChange"
+        class="upload"
+        accept="image/*"
+        type="file"
+        v-show="false"
+      />
+      <button style="display: block; text-align: left" @click="upload">
+        {{ image ? "Uploaded" : "Upload" }}
+      </button>
+      <button @click="() => (current ? update() : create())">
+        {{ current ? "Update" : "Create" }}
+      </button>
       <button @click="toggleCreate">Cancel</button>
     </div>
   </div>
@@ -37,6 +46,7 @@
 
 <script>
 import { quillEditor } from "vue3-quill";
+import fetchData from "@/fetchData.js";
 
 export default {
   name: "Create",
@@ -59,6 +69,7 @@ export default {
       location: this.current ? this.current.location : "",
       description: this.current ? this.current.description : "",
       max: this.current ? this.current.max : 0,
+      image: this.current ? this.current.image : "",
     };
   },
 
@@ -69,6 +80,101 @@ export default {
   props: {
     toggleCreate: Function,
     current: Object,
+  },
+
+  methods: {
+    fileChange(e) {
+      const fileReader = new FileReader();
+      fileReader.onload = (e) => (this.image = e.target.result);
+      fileReader.readAsDataURL(e.target.files[0]);
+    },
+
+    upload() {
+      document.querySelector(".upload").click();
+    },
+
+    create() {
+      if (
+        this.event &&
+        this.date &&
+        this.time &&
+        this.location &&
+        this.description &&
+        this.image
+      ) {
+        if (this.$store.state.key && this.$store.state.email) {
+          fetchData(
+            "add",
+            {
+              email: this.$store.state.email,
+              pass: this.$store.state.key,
+              event: this.event,
+              location: this.location,
+              date: this.date,
+              time: this.time,
+              description: this.description,
+              image: this.image,
+              max: this.max,
+            },
+            (json) => {
+              json = JSON.parse(json);
+              if (json.status) {
+                this.toggleCreate();
+                window.alert("Successfully Created");
+              } else {
+                window.alert("Server Error!");
+              }
+            }
+          );
+        } else {
+          window.alert("Not Logged In");
+        }
+      } else {
+        window.alert("All fields are required");
+      }
+    },
+
+    update() {
+      if (
+        this.event &&
+        this.date &&
+        this.time &&
+        this.location &&
+        this.description &&
+        this.image
+      ) {
+        if (this.$store.state.key && this.$store.state.email) {
+          fetchData(
+            "update",
+            {
+              email: this.$store.state.email,
+              pass: this.$store.state.key,
+              oldevent: this.current.event,
+              event: this.event,
+              location: this.location,
+              date: this.date,
+              time: this.time,
+              description: this.description,
+              image: this.image,
+              max: this.max,
+            },
+            (json) => {
+              json = JSON.parse(json);
+              if (json.status) {
+                this.toggleCreate();
+                window.alert("Successfully Updated");
+              } else {
+                window.alert("Server Error!");
+              }
+            }
+          );
+        } else {
+          window.alert("Not Logged In");
+        }
+      } else {
+        window.alert("All fields are required");
+      }
+    },
   },
 };
 </script>

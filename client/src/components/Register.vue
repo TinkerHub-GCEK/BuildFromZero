@@ -3,14 +3,14 @@
     <div class="popup">
       <h2>Register</h2>
       <Label>Name</Label>
-      <input type="text" placeholder="Type Your Name Here" />
+      <input v-model="name" type="text" placeholder="Type Your Name Here" />
       <Label>Email</Label>
-      <input type="email" placeholder="Type Your Email Here" />
+      <input v-model="email" type="email" placeholder="Type Your Email Here" />
       <Label>Phone</Label>
       <input type="phone" placeholder="Type Your Phone Number Here" />
       <label>Branch</label>
-      <select>
-        <option value="select" selected disabled>Select Your Branch</option>
+      <select v-model="branch">
+        <option value="" selected disabled>Select Your Branch</option>
         <option value="CE">CE</option>
         <option value="CSE">CSE</option>
         <option value="EEE">EEE</option>
@@ -19,25 +19,67 @@
         <option value="ME">ME</option>
       </select>
       <label>Year</label>
-      <select>
-        <option value="select" selected disabled>Select Your Year</option>
+      <select v-model="year">
+        <option value="" selected disabled>Select Your Year</option>
         <option value="1">First Year</option>
         <option value="2">Second Year</option>
         <option value="3">Third Year</option>
         <option value="4">Fourth Year</option>
       </select>
-      <button @click="toggleRegister">Register</button>
+      <button @click="register">Register</button>
       <button @click="toggleRegister">Cancel</button>
     </div>
   </div>
 </template>
 
 <script>
+import fetchData from "@/fetchData.js";
+
 export default {
   name: "Register",
 
+  data() {
+    return {
+      email: "",
+      name: "",
+      phone: "",
+      branch: "",
+      year: "",
+    };
+  },
+
   props: {
     toggleRegister: Function,
+    event: String,
+  },
+
+  register() {
+    if (this.email && this.name && this.phone && this.branch && this.year) {
+      let email = this.email.toLowerCase().trim();
+      let name = this.name.toLowerCase().trim();
+      fetchData(
+        "check",
+        {
+          event: this.event,
+          email: email,
+          name: name,
+          phone: this.phone,
+          branch: this.branch,
+          year: this.year,
+        },
+        (json) => {
+          json = JSON.parse(json);
+          if (json.status) {
+            this.toggleRegister();
+            window.alert("Successfully Registered");
+          } else {
+            window.alert("Server Error!");
+          }
+        }
+      );
+    } else {
+      window.alert("All fields are required");
+    }
   },
 };
 </script>

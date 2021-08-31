@@ -62,7 +62,11 @@
       </div>
     </section>
   </div>
-  <Register v-if="register" :toggleRegister="toggleRegister" />
+  <Register
+    v-if="register"
+    :toggleRegister="toggleRegister"
+    :event="current.event"
+  />
   <Login v-if="login" :toggleLogin="toggleLogin" />
   <Create v-if="create" :toggleCreate="toggleCreate" :current="{}" />
   <Create v-if="edit" :toggleCreate="toggleEdit" :current="current" />

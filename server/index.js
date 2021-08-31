@@ -27,7 +27,7 @@ const auth = async (email, pass) => {
   }
 };
 
-app.get("/check", async (req, res) => {
+app.post("/check", async (req, res) => {
   try {
     const result = await Users.findOne({ email: req.body.email });
     if (result) {
@@ -45,21 +45,19 @@ app.get("/check", async (req, res) => {
   }
 });
 
-app.get("/add", async (req, res) => {
+app.post("/add", async (req, res) => {
   try {
-    const check = await auth();
+    const check = await auth(req.body.email, req.body.pass);
     if (check) {
       const newEvent = new Events({
         event: req.body.event,
-        title: req.body.title,
         description: req.body.description,
         date: req.body.date,
         time: req.body.time,
         location: req.body.location,
-        banner: req.body.banner,
-        max: req.body.max ? req.body.max : 0,
+        image: req.body.image,
+        max: req.body.max,
         registered: 0,
-        status: req.body.status,
       });
       await newEvent.save();
       res.send({ status: "true" });
@@ -69,22 +67,21 @@ app.get("/add", async (req, res) => {
   } catch {}
 });
 
-app.get("/update", async (req, res) => {
+app.post("/update", async (req, res) => {
   try {
-    const check = await auth();
+    const check = await auth(req.body.email, req.body.pass);
     if (check) {
       await Events.findByIdAndUpdate(
-        { event: req.body.event },
+        { event: req.body.oldevent },
         {
           $set: {
-            title: req.body.title,
+            event: req.body.event,
             description: req.body.description,
             date: req.body.date,
             time: req.body.time,
             location: req.body.location,
-            banner: req.body.banner,
-            max: req.body.max ? req.body.max : 0,
-            status: req.body.status,
+            image: req.body.image,
+            max: req.body.max,
           },
         },
         { new: true }
@@ -96,7 +93,7 @@ app.get("/update", async (req, res) => {
   } catch {}
 });
 
-app.get("/register", async (req, res) => {
+app.post("/register", async (req, res) => {
   try {
     let newRegister = new Registrations({
       event: req.body.event,
