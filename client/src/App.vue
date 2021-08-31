@@ -132,7 +132,18 @@ export default {
     },
 
     getDate() {
-      return new Date(this.current.date).toString();
+      let date = new Date(this.current.date);
+      return (
+        date.getDay() +
+        "/" +
+        date.getMonth() +
+        "/" +
+        date.getFullYear() +
+        " " +
+        date.getHours() +
+        ":" +
+        date.getMinutes()
+      );
     },
   },
 
@@ -179,7 +190,13 @@ export default {
           this.upcoming = json.upcoming;
           this.previous = json.previous;
           if (this.current) {
-            document.querySelector(".event").classList.add("active");
+            try {
+              window.setTimeout(() => {
+                document.querySelector(".event").classList.add("active");
+              }, 1000);
+            } catch {
+              // Ignore error
+            }
           }
         } else {
           window.alert("Server Error!");
