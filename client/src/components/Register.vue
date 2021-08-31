@@ -68,12 +68,16 @@ export default {
           year: this.year,
         },
         (json) => {
-          json = JSON.parse(json);
+          json = JSON.parse(JSON.stringify(json));
           if (json.status) {
             this.toggleRegister();
             window.alert("Successfully Registered");
           } else {
-            window.alert("Server Error!");
+            if (json.status == "") {
+              window.alert("Maximum Registrations Reached!");
+            } else {
+              window.alert("Server Error!");
+            }
           }
         }
       );

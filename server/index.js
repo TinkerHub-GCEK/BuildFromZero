@@ -33,15 +33,15 @@ app.post("/check", async (req, res) => {
     if (result) {
       const isMatch = await bcrypt.compare(req.body.pass, result.pass);
       if (isMatch) {
-        res.send({ status: "true", api: result.pass });
+        res.send({ status: "true", api: result.toObject().pass });
       } else {
-        res.status(404).send({ status: "false" });
+        res.status(404).send({ status: false });
       }
     } else {
-      res.status(404).send({ status: "false" });
+      res.status(404).send({ status: false });
     }
   } catch {
-    res.status(404).send({ status: "false" });
+    res.status(404).send({ status: false });
   }
 });
 
@@ -59,9 +59,9 @@ app.post("/add", async (req, res) => {
         registered: 0,
       });
       await newEvent.save();
-      res.send({ status: "true" });
+      res.send({ status: true });
     } else {
-      res.send({ status: "false" });
+      res.send({ status: false });
     }
   } catch {}
 });
@@ -84,33 +84,38 @@ app.post("/update", async (req, res) => {
         },
         { new: true }
       );
-      res.send({ status: "true" });
+      res.send({ status: true });
     } else {
-      res.send({ status: "false" });
+      res.send({ status: false });
     }
   } catch {}
 });
 
 app.post("/register", async (req, res) => {
   try {
-    let newRegister = new Registrations({
-      event: req.body.event,
-      name: req.body.name,
-      email: req.body.email,
-      phone: req.body.phone,
-      branch: req.body.branch,
-      year: req.body.year,
-      school: req.body.school ? req.body.school : "",
-    });
-    await newRegister.save();
-    await Events.findOneAndUpdate(
-      { event: req.body.event },
-      { $inc: { registered: 1 } },
-      { new: true }
-    );
-    res.send({ status: "true" });
+    let event = await Events.findOne({ event: req.body.event });
+    if (event.max == 0 || event.registered != event.max) {
+      let newRegister = new Registrations({
+        event: req.body.event,
+        name: req.body.name,
+        email: req.body.email,
+        phone: req.body.phone,
+        branch: req.body.branch,
+        year: req.body.year,
+        school: req.body.school ? req.body.school : "",
+      });
+      await newRegister.save();
+      await Events.findOneAndUpdate(
+        { event: req.body.event },
+        { $inc: { registered: 1 } },
+        { new: true }
+      );
+      res.send({ status: true });
+    } else {
+      res.send({ status: "" });
+    }
   } catch {
-    res.status(404).send({ status: "false" });
+    res.status(404).send({ status: false });
   }
 });
 
@@ -129,9 +134,13 @@ app.post("/get", async (req, res) => {
       date: 1,
     });
 
-    res.send({ status: "true", upcoming: upcoming, previous: previous });
+    res.send({
+      status: "true",
+      upcoming: upcoming.toObject(),
+      previous: previous.toObject(),
+    });
   } catch {
-    res.status(404).send({ status: "false" });
+    res.status(404).send({ status: false });
   }
 });
 
@@ -142,9 +151,9 @@ app.post("/registrations", async (req, res) => {
       let result = await Registrations.find({
         event: req.body.event,
       });
-      res.send({ status: "true", result: result });
+      res.send({ status: true, result: result.toObject() });
     } else {
-      res.send({ status: "false" });
+      res.send({ status: false });
     }
   } catch {}
 });

@@ -121,7 +121,7 @@ export default {
               max: this.max,
             },
             (json) => {
-              json = JSON.parse(json);
+              json = JSON.parse(JSON.stringify(json));
               if (json.status) {
                 this.toggleCreate();
                 window.alert("Successfully Created");
@@ -163,7 +163,7 @@ export default {
               max: this.max,
             },
             (json) => {
-              json = JSON.parse(json);
+              json = JSON.parse(JSON.stringify(json));
               if (json.status) {
                 this.toggleCreate();
                 window.alert("Successfully Updated");

@@ -49,7 +49,7 @@ export default {
         pass: this.$store.state.key,
       },
       (json) => {
-        json = JSON.parse(json);
+        json = JSON.parse(JSON.stringify(json));
         if (json.status) {
           this.result = json.result;
           this.toggleRegistrations();

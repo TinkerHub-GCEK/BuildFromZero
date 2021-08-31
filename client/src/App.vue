@@ -128,7 +128,7 @@ export default {
 
   created() {
     fetchData("get", {}, (json) => {
-      json = JSON.parse(json);
+      json = JSON.parse(JSON.stringify(json));
       if (json.status) {
         this.upcoming = json.upcoming;
         this.previous = json.previous;

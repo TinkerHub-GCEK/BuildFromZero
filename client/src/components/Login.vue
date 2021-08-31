@@ -44,7 +44,7 @@ export default {
             pass: this.password,
           },
           (json) => {
-            json = JSON.parse(json);
+            json = JSON.parse(JSON.stringify(json));
             if (json.status) {
               this.$store.commit("changeKey", email, json.api);
               this.$store.commit("changeLogin");
