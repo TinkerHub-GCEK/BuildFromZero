@@ -28,7 +28,9 @@
           <p v-html="current.description"></p>
           <button v-if="!logged" @click="toggleRegister">Register</button>
           <button v-if="logged" @click="toggleEdit">Edit Event</button>
-          <button v-if="logged">Registrations</button>
+          <button v-if="logged" @click="toggleRegistrations">
+            Registrations
+          </button>
         </div>
       </div>
       <div class="sidebar">
@@ -72,6 +74,10 @@
   <Login v-if="login" :toggleLogin="toggleLogin" />
   <Create v-if="create" :toggleCreate="toggleCreate" :current="{}" />
   <Create v-if="edit" :toggleCreate="toggleEdit" :current="current" />
+  <Registrations
+    v-if="Registrations"
+    :toggleRegistrations="toggleRegistrations"
+  />
 </template>
 
 <script>
@@ -97,6 +103,7 @@ export default {
       login: false,
       create: false,
       edit: false,
+      registrations: false,
       upcoming: [],
       previous: [],
       currentEvent: 0,
@@ -152,6 +159,10 @@ export default {
 
     toggleEdit() {
       this.edit = !this.edit;
+    },
+
+    toggleRegistrations() {
+      this.registrations = !this.registrations;
     },
 
     preview(e, index) {
