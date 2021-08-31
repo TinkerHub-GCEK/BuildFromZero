@@ -49,7 +49,6 @@
 
 <script>
 import { quillEditor } from "vue3-quill";
-import fetchData from "@/fetchData.js";
 
 export default {
   name: "Create",
@@ -85,6 +84,7 @@ export default {
     toggleCreate: Function,
     current: Object,
     getEvents: Function,
+    fetchData: Function,
   },
 
   methods: {
@@ -109,7 +109,7 @@ export default {
       ) {
         if (this.$store.state.key && this.$store.state.email) {
           let date = new Date(this.date + "T" + this.time);
-          fetchData(
+          this.fetchData(
             "add",
             {
               email: this.$store.state.email,
@@ -151,7 +151,7 @@ export default {
       ) {
         if (this.$store.state.key && this.$store.state.email) {
           let date = new Date(this.date + "T" + this.time);
-          fetchData(
+          this.fetchData(
             "update",
             {
               email: this.$store.state.email,

@@ -17,8 +17,6 @@
 </template>
 
 <script>
-import fetchData from "@/fetchData.js";
-
 export default {
   name: "Login",
 
@@ -31,13 +29,14 @@ export default {
 
   props: {
     toggleLogin: Function,
+    fetchData: Function,
   },
 
   methods: {
     login() {
       if (this.email && this.password) {
         let email = this.email.toLowerCase().trim();
-        fetchData(
+        this.fetchData(
           "check",
           {
             email: email,

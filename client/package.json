@@ -9,9 +9,9 @@
   },
   "dependencies": {
     "core-js": "^3.8.3",
-    "nprogress": "^0.2.0",
     "vue": "^3.0.4",
     "vue-router": "^4.0.3",
+    "vue-top-progress": "^0.7.0",
     "vue3-quill": "^0.2.6",
     "vuex": "^4.0.0"
   },

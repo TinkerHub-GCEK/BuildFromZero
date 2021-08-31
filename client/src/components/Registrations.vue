@@ -26,8 +26,6 @@
 </template>
 
 <script>
-import fetchData from "@/fetchData.js";
-
 export default {
   name: "Registrations",
 
@@ -39,10 +37,11 @@ export default {
 
   props: {
     toggleRegistrations: Function,
+    fetchData: Function,
   },
 
   created() {
-    fetchData(
+    this.fetchData(
       "registrations",
       {
         email: this.$store.state.email,

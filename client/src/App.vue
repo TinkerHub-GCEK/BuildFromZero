@@ -70,24 +70,29 @@
     v-if="register"
     :toggleRegister="toggleRegister"
     :event="current.event"
+    :fetchData="fetchData"
   />
-  <Login v-if="login" :toggleLogin="toggleLogin" />
+  <Login v-if="login" :toggleLogin="toggleLogin" :fetchData="fetchData" />
   <Create
     v-if="create"
     :toggleCreate="toggleCreate"
     :current="{}"
     :getEvents="getEvents"
+    :fetchData="fetchData"
   />
   <Create
     v-if="edit"
     :toggleCreate="toggleEdit"
     :current="current"
     :getEvents="getEvents"
+    :fetchData="fetchData"
   />
   <Registrations
     v-if="Registrations"
     :toggleRegistrations="toggleRegistrations"
+    :fetchData="fetchData"
   />
+  <vue-topprogress ref="topProgress" color="rgb(0, 255, 191)"></vue-topprogress>
 </template>
 
 <script>
@@ -95,7 +100,7 @@ import NavBar from "./components/NavBar.vue";
 import Register from "./components/Register.vue";
 import Login from "./components/Login.vue";
 import Create from "./components/Create.vue";
-import fetchData from "./fetchData.js";
+import { vueTopprogress } from "vue-top-progress";
 
 export default {
   name: "App",
@@ -105,6 +110,7 @@ export default {
     Register,
     Login,
     Create,
+    vueTopprogress,
   },
 
   data() {
@@ -136,7 +142,7 @@ export default {
       return (
         date.getDay() +
         "/" +
-        date.getMonth() +
+        (date.getMonth() + 1) +
         "/" +
         date.getFullYear() +
         " " +
@@ -152,6 +158,22 @@ export default {
   },
 
   methods: {
+    fetchData(url, postData, func) {
+      this.$refs.topProgress.start();
+      fetch("/" + url, {
+        method: "POST",
+        body: JSON.stringify(postData),
+        headers: {
+          "Content-type": "application/json; charset=UTF-8",
+        },
+      })
+        .then((response) => response.json())
+        .then((json) => {
+          func(json);
+          this.$refs.topProgress.done();
+        });
+    },
+
     toggleRegister() {
       this.register = !this.register;
     },
@@ -184,7 +206,7 @@ export default {
     },
 
     getEvents() {
-      fetchData("get", {}, (json) => {
+      this.fetchData("get", {}, (json) => {
         json = JSON.parse(JSON.stringify(json));
         if (json.status == "true") {
           this.upcoming = json.upcoming;

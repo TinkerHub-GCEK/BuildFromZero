@@ -33,8 +33,6 @@
 </template>
 
 <script>
-import fetchData from "@/fetchData.js";
-
 export default {
   name: "Register",
 
@@ -51,13 +49,14 @@ export default {
   props: {
     toggleRegister: Function,
     event: String,
+    fetchData: Function,
   },
 
   register() {
     if (this.email && this.name && this.phone && this.branch && this.year) {
       let email = this.email.toLowerCase().trim();
       let name = this.name.toLowerCase().trim();
-      fetchData(
+      this.fetchData(
         "check",
         {
           event: this.event,
