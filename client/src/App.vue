@@ -30,7 +30,7 @@
           </div>
           <p v-html="current.description"></p>
           <button
-            v-if="!logged && this.currentEvent < this.upcoming.length"
+            v-if="!logged && currentEvent < upcoming.length"
             @click="toggleRegister"
           >
             Register
