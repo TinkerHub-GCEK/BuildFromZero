@@ -30,15 +30,30 @@
           </div>
           <p v-html="current.description"></p>
           <button
-            v-if="!logged && currentEvent < upcoming.length"
+            v-if="
+              !logged &&
+              currentEvent < upcoming.length &&
+              current.max > current.registered
+            "
             @click="toggleRegister"
           >
             Register
           </button>
-          <button v-if="logged" @click="toggleEdit">Edit Event</button>
+          <p
+            v-if="
+              !logged &&
+              currentEvent < upcoming.length &&
+              current.max == current.registered
+            "
+            style="text-align: center; color: rgb(0, 255, 191)"
+          >
+            *Maximum Registrations Reached
+          </p>
           <button v-if="logged" @click="toggleRegistrations">
             Registrations
           </button>
+          <button v-if="logged" @click="toggleEdit">Edit Event</button>
+          <button v-if="logged" @click="deleteEvent">Delete Event</button>
         </div>
       </div>
       <div class="sidebar">
@@ -104,6 +119,7 @@
     v-if="registrations"
     :toggleRegistrations="toggleRegistrations"
     :event="current.event"
+    :getEvents="getEvents"
     :fetchData="fetchData"
   />
   <vue-progress-bar></vue-progress-bar>
@@ -256,6 +272,28 @@ export default {
           window.alert("Server Error!");
         }
       });
+    },
+
+    deleteEvent() {
+      if (window.confirm("Are You Sure?")) {
+        this.fetchData(
+          "delete",
+          {
+            email: this.$store.state.email,
+            pass: this.$store.state.key,
+            event: this.current.event,
+          },
+          (json) => {
+            json = JSON.parse(JSON.stringify(json));
+            if (json.status == "true") {
+              this.getEvents();
+              window.alert("Successfully Deleted");
+            } else {
+              window.alert("Server Error!");
+            }
+          }
+        );
+      }
     },
   },
 };

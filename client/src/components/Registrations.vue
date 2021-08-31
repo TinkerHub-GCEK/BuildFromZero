@@ -10,6 +10,7 @@
             <th>Phone</th>
             <th>Branch</th>
             <th>Year</th>
+            <th>Delete</th>
           </tr>
           <tr v-for="(reg, index) in result" :key="index">
             <th>{{ reg.name }}</th>
@@ -17,6 +18,16 @@
             <th>{{ reg.phone }}</th>
             <th>{{ reg.branch }}</th>
             <th>{{ reg.year }}</th>
+            <th>
+              <Button
+                @click="
+                  () => {
+                    deleteRegistration(reg.event, reg._id);
+                  }
+                "
+                >Delete</Button
+              >
+            </th>
           </tr>
         </table>
       </div>
@@ -38,26 +49,55 @@ export default {
   props: {
     toggleRegistrations: Function,
     fetchData: Function,
+    getEvents: Function,
     event: String,
   },
 
   created() {
-    this.fetchData(
-      "registrations",
-      {
-        email: this.$store.state.email,
-        pass: this.$store.state.key,
-        event: this.event,
-      },
-      (json) => {
-        json = JSON.parse(JSON.stringify(json));
-        if (json.status == "true") {
-          this.result = json.result;
-        } else {
-          window.alert("Server Error!");
+    this.loadRegistrations();
+  },
+
+  methods: {
+    loadRegistrations() {
+      this.fetchData(
+        "registrations",
+        {
+          email: this.$store.state.email,
+          pass: this.$store.state.key,
+          event: this.event,
+        },
+        (json) => {
+          json = JSON.parse(JSON.stringify(json));
+          if (json.status == "true") {
+            this.result = json.result;
+          } else {
+            window.alert("Server Error!");
+          }
         }
-      }
-    );
+      );
+    },
+
+    deleteRegistration(event, id) {
+      this.fetchData(
+        "delete-registration",
+        {
+          email: this.$store.state.email,
+          pass: this.$store.state.key,
+          id: id,
+          event: event,
+        },
+        (json) => {
+          json = JSON.parse(JSON.stringify(json));
+          if (json.status == "true") {
+            this.loadRegistrations();
+            this.getEvents();
+            window.alert("Successfully Deleted");
+          } else {
+            window.alert("Server Error!");
+          }
+        }
+      );
+    },
   },
 };
 </script>

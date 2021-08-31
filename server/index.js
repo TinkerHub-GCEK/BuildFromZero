@@ -142,6 +142,22 @@ app.post("/get", async (req, res) => {
   }
 });
 
+app.post("/delete", async (req, res) => {
+  try {
+    const check = await auth(req.body.email, req.body.pass);
+    if (check) {
+      await Events.findOneAndDelete({
+        event: req.body.event,
+      });
+
+      await Registrations.deleteMany({ event: req.body.event });
+      res.send({ status: "true" });
+    } else {
+      res.send({ status: "false" });
+    }
+  } catch {}
+});
+
 app.post("/registrations", async (req, res) => {
   try {
     const check = await auth(req.body.email, req.body.pass);
@@ -150,6 +166,23 @@ app.post("/registrations", async (req, res) => {
         event: req.body.event,
       });
       res.send({ status: "true", result: result });
+    } else {
+      res.send({ status: "false" });
+    }
+  } catch {}
+});
+
+app.post("/delete-registration", async (req, res) => {
+  try {
+    const check = await auth(req.body.email, req.body.pass);
+    if (check) {
+      await Registrations.findOneAndDelete({ _id: req.body.id });
+      await Events.findOneAndUpdate(
+        { event: req.body.event },
+        { $inc: { registered: -1 } },
+        { new: true }
+      );
+      res.send({ status: "true" });
     } else {
       res.send({ status: "false" });
     }

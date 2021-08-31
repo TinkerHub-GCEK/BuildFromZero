@@ -5,7 +5,7 @@ mongoose.connect(
   "mongodb+srv://ramnath:" +
     process.env.PASS +
     "@cluster0.07lh9.mongodb.net/myFirstDatabase?retryWrites=true&w=majority",
-  { useNewUrlParser: true, useUnifiedTopology: true }
+  { useNewUrlParser: true, useUnifiedTopology: true, useFindAndModify: false }
 );
 
 mongoose.connection.on("connected", function () {
