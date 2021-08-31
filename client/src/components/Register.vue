@@ -7,7 +7,11 @@
       <Label>Email</Label>
       <input v-model="email" type="email" placeholder="Type Your Email Here" />
       <Label>Phone</Label>
-      <input type="phone" placeholder="Type Your Phone Number Here" />
+      <input
+        v-model="phone"
+        type="phone"
+        placeholder="Type Your Phone Number Here"
+      />
       <label>Branch</label>
       <select v-model="branch">
         <option value="" selected disabled>Select Your Branch</option>
@@ -54,6 +58,7 @@ export default {
 
   methods: {
     register() {
+      console.log(this.email, this.name, this.phone, this.branch, this.year);
       if (this.email && this.name && this.phone && this.branch && this.year) {
         let email = this.email.toLowerCase().trim();
         let name = this.name.toLowerCase().trim();

@@ -51,7 +51,6 @@ export default {
         json = JSON.parse(JSON.stringify(json));
         if (json.status == "true") {
           this.result = json.result;
-          this.toggleRegistrations();
         } else {
           window.alert("Server Error!");
         }
@@ -96,7 +95,23 @@ label {
 .fix {
   height: auto;
   max-height: calc(90vh - 12em);
-  overflow: hidden;
-  overflow-y: auto;
+  overflow: auto;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+  width: 100%;
+  border: 1px solid #ddd;
+}
+
+th,
+td {
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: rgba(0, 0, 0, 0.75);
 }
 </style>
