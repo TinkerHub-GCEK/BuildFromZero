@@ -22,6 +22,7 @@
       <input
         v-model="max"
         type="number"
+        min="0"
         placeholder="Type Number Of Maximum Registrations Here"
       />
       <p>*If don't want maximum registration limit leave it to 0</p>
