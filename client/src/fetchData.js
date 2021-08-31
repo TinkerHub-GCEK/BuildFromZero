@@ -1,4 +1,5 @@
 export default function fetchData(url, postData, func) {
+  NProgress.start();
   fetch("/" + url, {
     method: "POST",
     body: JSON.stringify(postData),
@@ -7,5 +8,8 @@ export default function fetchData(url, postData, func) {
     },
   })
     .then((response) => response.json())
-    .then(func);
+    .then((json) => {
+      func(json);
+      NProgress.done();
+    });
 }
