@@ -21,7 +21,7 @@
             <p>
               Event Location: <span>{{ current.location }}</span>
             </p>
-            <p>
+            <p v-if="current.max != 0">
               Maximum Registrations: <span>{{ current.max }}</span>
             </p>
             <p>
@@ -29,7 +29,6 @@
             </p>
           </div>
           <p v-html="current.description"></p>
-          <button v-if="!logged" @click="toggleRegister">Register</button>
           <button v-if="logged" @click="toggleEdit">Edit Event</button>
           <button v-if="logged" @click="toggleRegistrations">
             Registrations
