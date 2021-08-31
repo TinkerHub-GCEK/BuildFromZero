@@ -88,7 +88,7 @@
     :fetchData="fetchData"
   />
   <Registrations
-    v-if="Registrations"
+    v-if="registrations"
     :toggleRegistrations="toggleRegistrations"
     :fetchData="fetchData"
   />
