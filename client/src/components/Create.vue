@@ -103,6 +103,7 @@ export default {
         this.image
       ) {
         if (this.$store.state.key && this.$store.state.email) {
+          let date = new Date(this.date + "T" + this.time);
           fetchData(
             "add",
             {
@@ -110,8 +111,7 @@ export default {
               pass: this.$store.state.key,
               event: this.event,
               location: this.location,
-              date: this.date,
-              time: this.time,
+              date: date.getTime(),
               description: this.description,
               image: this.image,
               max: this.max,
@@ -144,6 +144,7 @@ export default {
         this.image
       ) {
         if (this.$store.state.key && this.$store.state.email) {
+          let date = new Date(this.date + "T" + this.time);
           fetchData(
             "update",
             {
@@ -152,8 +153,7 @@ export default {
               oldevent: this.current.event,
               event: this.event,
               location: this.location,
-              date: this.date,
-              time: this.time,
+              date: date.getTime(),
               description: this.description,
               image: this.image,
               max: this.max,

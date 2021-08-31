@@ -53,7 +53,6 @@ app.post("/add", async (req, res) => {
         event: req.body.event,
         description: req.body.description,
         date: req.body.date,
-        time: req.body.time,
         location: req.body.location,
         image: req.body.image,
         max: req.body.max,
@@ -78,7 +77,6 @@ app.post("/update", async (req, res) => {
             event: req.body.event,
             description: req.body.description,
             date: req.body.date,
-            time: req.body.time,
             location: req.body.location,
             image: req.body.image,
             max: req.body.max,
@@ -111,6 +109,27 @@ app.post("/register", async (req, res) => {
       { new: true }
     );
     res.send({ status: "true" });
+  } catch {
+    res.status(404).send({ status: "false" });
+  }
+});
+
+app.post("/get", async (req, res) => {
+  try {
+    let date = new Date().getTime();
+    let upcoming = await Events.find({
+      date: { $gte: date },
+    }).sort({
+      date: 1,
+    });
+
+    let previous = await Events.find({
+      date: { $lt: date },
+    }).sort({
+      date: 1,
+    });
+
+    res.send({ status: "true", upcoming: upcoming, previous: previous });
   } catch {
     res.status(404).send({ status: "false" });
   }
