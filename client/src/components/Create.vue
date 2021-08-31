@@ -122,7 +122,7 @@ export default {
             },
             (json) => {
               json = JSON.parse(JSON.stringify(json));
-              if (json.status) {
+              if (json.status == "true") {
                 this.toggleCreate();
                 window.alert("Successfully Created");
               } else {
@@ -164,7 +164,7 @@ export default {
             },
             (json) => {
               json = JSON.parse(JSON.stringify(json));
-              if (json.status) {
+              if (json.status == "true") {
                 this.toggleCreate();
                 window.alert("Successfully Updated");
               } else {

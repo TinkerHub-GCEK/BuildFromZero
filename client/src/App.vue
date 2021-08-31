@@ -129,7 +129,7 @@ export default {
   created() {
     fetchData("get", {}, (json) => {
       json = JSON.parse(JSON.stringify(json));
-      if (json.status) {
+      if (json.status == "true") {
         this.upcoming = json.upcoming;
         this.previous = json.previous;
       } else {
