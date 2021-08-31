@@ -165,7 +165,9 @@ export default {
       this.currentEvent = index;
       try {
         document.querySelector(".active").classList.remove("active");
-      } catch {}
+      } catch {
+        // Ignore error
+      }
       e.path[1].classList.add("active");
       window.scrollTo(0, 0);
     },
