@@ -13,7 +13,10 @@
           <h3>{{ current.event }}</h3>
           <div class="details">
             <p>
-              Event Time: <span>{{ getDate }}</span>
+              Event Date: <span>{{ getDate }}</span>
+            </p>
+            <p>
+              Event Time: <span>{{ getTime }}</span>
             </p>
             <p>
               Event Location: <span>{{ current.location }}</span>
@@ -139,31 +142,37 @@ export default {
         : this.previous[this.currentEvent - this.upcoming.length];
     },
 
-    getDate() {
-      function appendLeadingZeroes(n) {
-        if (n <= 9) {
-          return "0" + n;
-        }
-        return n;
+    appendLeadingZeroes(n) {
+      if (n <= 9) {
+        return "0" + n;
       }
+      return n;
+    },
+
+    getDate() {
       const date = new Date(this.current.date);
+
       return (
-        appendLeadingZeroes(date.getDay()) +
+        this.appendLeadingZeroes(date.getDay()) +
         "-" +
-        appendLeadingZeroes(date.getMonth() + 1) +
+        this.appendLeadingZeroes(date.getMonth() + 1) +
         "-" +
-        date.getFullYear() +
-        " " +
-        (date.getHours() <= 12
-          ? appendLeadingZeroes(date.getHours()) +
-            ":" +
-            appendLeadingZeroes(date.getMinutes()) +
-            "AM"
-          : appendLeadingZeroes(date.getHours() - 12) +
-            ":" +
-            appendLeadingZeroes(date.getMinutes()) +
-            "PM")
+        date.getFullYear()
       );
+    },
+
+    getTime() {
+      const date = new Date(this.current.date);
+
+      return date.getHours() <= 12
+        ? this.appendLeadingZeroes(date.getHours()) +
+            ":" +
+            this.appendLeadingZeroes(date.getMinutes()) +
+            "AM"
+        : this.appendLeadingZeroes(date.getHours() - 12) +
+            ":" +
+            this.appendLeadingZeroes(date.getMinutes()) +
+            "PM";
     },
   },
 
