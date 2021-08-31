@@ -1,3 +1,5 @@
+import { NProgress } from "nprogress";
+
 export default function fetchData(url, postData, func) {
   NProgress.start();
   fetch("/" + url, {
