@@ -138,17 +138,29 @@ export default {
     },
 
     getDate() {
+      function appendLeadingZeroes(n) {
+        if (n <= 9) {
+          return "0" + n;
+        }
+        return n;
+      }
       let date = new Date(this.current.date);
       return (
-        date.getDay() +
-        "/" +
-        (date.getMonth() + 1) +
-        "/" +
+        appendLeadingZeroes(date.getDay()) +
+        "-" +
+        appendLeadingZeroes(date.getMonth() + 1) +
+        "-" +
         date.getFullYear() +
         " " +
-        date.getHours() +
-        ":" +
-        date.getMinutes()
+        (date.getHours() <= 12
+          ? appendLeadingZeroes(date.getHours()) +
+            ":" +
+            appendLeadingZeroes(date.getMinutes()) +
+            "AM"
+          : appendLeadingZeroes(date.getHours() - 12) +
+            ":" +
+            appendLeadingZeroes(date.getMinutes()) +
+            "PM")
       );
     },
   },
