@@ -50,12 +50,5 @@
     "last 2 versions",
     "not dead",
     "not ie 11"
-  ],
-  "optionalDependencies": {
-    "fsevents": "^2.3.2"
-  },
-  "engines": {
-    "node": "16.x",
-    "npm": "7.x"
-  }
+  ]
 }
