@@ -21,9 +21,11 @@
       <Label>Maximum Registrations</Label>
       <input
         v-model="max"
+        value="0"
         type="number"
         placeholder="Type Number Of Maximum Registrations Here"
       />
+      <p>*If don't want maximum registration limit leave it to 0</p>
       <Label>Event Banner/Poster</Label>
       <input type="file" v-show="false" />
       <button style="display: block; text-align: left">Upload</button>
