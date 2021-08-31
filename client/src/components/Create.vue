@@ -84,6 +84,7 @@ export default {
   props: {
     toggleCreate: Function,
     current: Object,
+    getEvents: Function,
   },
 
   methods: {
@@ -124,6 +125,7 @@ export default {
               json = JSON.parse(JSON.stringify(json));
               if (json.status == "true") {
                 this.toggleCreate();
+                this.getEvents();
                 window.alert("Successfully Created");
               } else {
                 window.alert("Server Error!");
@@ -166,6 +168,7 @@ export default {
               json = JSON.parse(JSON.stringify(json));
               if (json.status == "true") {
                 this.toggleCreate();
+                this.getEvents();
                 window.alert("Successfully Updated");
               } else {
                 window.alert("Server Error!");

@@ -72,8 +72,18 @@
     :event="current.event"
   />
   <Login v-if="login" :toggleLogin="toggleLogin" />
-  <Create v-if="create" :toggleCreate="toggleCreate" :current="{}" />
-  <Create v-if="edit" :toggleCreate="toggleEdit" :current="current" />
+  <Create
+    v-if="create"
+    :toggleCreate="toggleCreate"
+    :current="{}"
+    :getEvents="getEvents"
+  />
+  <Create
+    v-if="edit"
+    :toggleCreate="toggleEdit"
+    :current="current"
+    :getEvents="getEvents"
+  />
   <Registrations
     v-if="Registrations"
     :toggleRegistrations="toggleRegistrations"
@@ -127,18 +137,7 @@ export default {
   },
 
   created() {
-    fetchData("get", {}, (json) => {
-      json = JSON.parse(JSON.stringify(json));
-      if (json.status == "true") {
-        this.upcoming = json.upcoming;
-        this.previous = json.previous;
-        if (this.current) {
-          document.querySelector(".event").classList.add("active");
-        }
-      } else {
-        window.alert("Server Error!");
-      }
-    });
+    this.getEvents();
   },
 
   methods: {
@@ -169,6 +168,21 @@ export default {
       } catch {}
       e.path[1].classList.add("active");
       window.scrollTo(0, 0);
+    },
+
+    getEvents() {
+      fetchData("get", {}, (json) => {
+        json = JSON.parse(JSON.stringify(json));
+        if (json.status == "true") {
+          this.upcoming = json.upcoming;
+          this.previous = json.previous;
+          if (this.current) {
+            document.querySelector(".event").classList.add("active");
+          }
+        } else {
+          window.alert("Server Error!");
+        }
+      });
     },
   },
 };
