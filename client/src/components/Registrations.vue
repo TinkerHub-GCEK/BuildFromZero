@@ -76,8 +76,8 @@ export default {
 }
 
 .popup {
-  width: 90%;
-  max-width: 36em;
+  width: auto;
+  max-width: 90vw;
   height: auto;
   max-height: 90vh;
   padding: 2em;
@@ -95,6 +95,8 @@ label {
 .fix {
   height: auto;
   max-height: calc(90vh - 12em);
+  width: auto;
+  max-width: calc(90vw - 4em);
   overflow: auto;
 }
 
