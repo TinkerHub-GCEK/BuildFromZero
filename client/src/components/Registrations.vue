@@ -50,7 +50,7 @@ export default {
       },
       (json) => {
         json = JSON.parse(JSON.stringify(json));
-        if (json.status) {
+        if (json.status == "true") {
           this.result = json.result;
           this.toggleRegistrations();
         } else {

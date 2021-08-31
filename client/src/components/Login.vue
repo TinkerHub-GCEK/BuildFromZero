@@ -45,7 +45,7 @@ export default {
           },
           (json) => {
             json = JSON.parse(JSON.stringify(json));
-            if (json.status) {
+            if (json.status == "true") {
               this.$store.commit("changeKey", email, json.api);
               this.$store.commit("changeLogin");
               this.toggleLogin();

@@ -33,15 +33,15 @@ app.post("/check", async (req, res) => {
     if (result) {
       const isMatch = await bcrypt.compare(req.body.pass, result.pass);
       if (isMatch) {
-        res.send({ status: "true", api: result.toObject().pass });
+        res.send({ status: "true", api: result.pass });
       } else {
-        res.status(404).send({ status: false });
+        res.status(404).send({ status: "false" });
       }
     } else {
-      res.status(404).send({ status: false });
+      res.status(404).send({ status: "false" });
     }
   } catch {
-    res.status(404).send({ status: false });
+    res.status(404).send({ status: "false" });
   }
 });
 
@@ -59,9 +59,9 @@ app.post("/add", async (req, res) => {
         registered: 0,
       });
       await newEvent.save();
-      res.send({ status: true });
+      res.send({ status: "true" });
     } else {
-      res.send({ status: false });
+      res.send({ status: "false" });
     }
   } catch {}
 });
@@ -84,9 +84,9 @@ app.post("/update", async (req, res) => {
         },
         { new: true }
       );
-      res.send({ status: true });
+      res.send({ status: "true" });
     } else {
-      res.send({ status: false });
+      res.send({ status: "false" });
     }
   } catch {}
 });
@@ -110,12 +110,12 @@ app.post("/register", async (req, res) => {
         { $inc: { registered: 1 } },
         { new: true }
       );
-      res.send({ status: true });
+      res.send({ status: "true" });
     } else {
       res.send({ status: "" });
     }
   } catch {
-    res.status(404).send({ status: false });
+    res.status(404).send({ status: "false" });
   }
 });
 
@@ -133,14 +133,15 @@ app.post("/get", async (req, res) => {
     }).sort({
       date: 1,
     });
-
+    console.log("Hi");
     res.send({
       status: "true",
-      upcoming: upcoming.toObject(),
-      previous: previous.toObject(),
+      upcoming: upcoming,
+      previous: previous,
     });
-  } catch {
-    res.status(404).send({ status: false });
+  } catch (e) {
+    console.log(e);
+    res.status(404).send({ status: "false" });
   }
 });
 
@@ -151,9 +152,9 @@ app.post("/registrations", async (req, res) => {
       let result = await Registrations.find({
         event: req.body.event,
       });
-      res.send({ status: true, result: result.toObject() });
+      res.send({ status: "true", result: result });
     } else {
-      res.send({ status: false });
+      res.send({ status: "false" });
     }
   } catch {}
 });
