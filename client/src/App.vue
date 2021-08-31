@@ -142,11 +142,11 @@ export default {
         : this.previous[this.currentEvent - this.upcoming.length];
     },
 
-    appendLeadingZeroes(n) {
-      if (n <= 9) {
-        return "0" + n;
+    appendLeadingZeroes(num) {
+      if (num <= 9) {
+        return "0" + num;
       }
-      return n;
+      return num;
     },
 
     getDate() {
