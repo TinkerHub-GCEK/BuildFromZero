@@ -92,7 +92,7 @@
     :toggleRegistrations="toggleRegistrations"
     :fetchData="fetchData"
   />
-  <vue-topprogress ref="topProgress" color="rgb(0, 255, 191)"></vue-topprogress>
+  <vue-progress-bar></vue-progress-bar>
 </template>
 
 <script>
@@ -100,7 +100,6 @@ import NavBar from "./components/NavBar.vue";
 import Register from "./components/Register.vue";
 import Login from "./components/Login.vue";
 import Create from "./components/Create.vue";
-import { vueTopprogress } from "vue-top-progress";
 
 export default {
   name: "App",
@@ -110,7 +109,6 @@ export default {
     Register,
     Login,
     Create,
-    vueTopprogress,
   },
 
   data() {
@@ -171,7 +169,7 @@ export default {
 
   methods: {
     fetchData(url, postData, func) {
-      this.$refs.topProgress.start();
+      this.$Progress.start();
       fetch("/" + url, {
         method: "POST",
         body: JSON.stringify(postData),
@@ -182,7 +180,7 @@ export default {
         .then((response) => response.json())
         .then((json) => {
           func(json);
-          this.$refs.topProgress.done();
+          this.$Progress.finish();
         });
     },
 
