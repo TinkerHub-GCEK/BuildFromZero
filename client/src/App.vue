@@ -100,6 +100,7 @@ import NavBar from "./components/NavBar.vue";
 import Register from "./components/Register.vue";
 import Login from "./components/Login.vue";
 import Create from "./components/Create.vue";
+import Registrations from "./components/Registrations.vue";
 
 export default {
   name: "App",
@@ -109,6 +110,7 @@ export default {
     Register,
     Login,
     Create,
+    Registrations,
   },
 
   data() {

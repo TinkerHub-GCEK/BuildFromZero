@@ -52,37 +52,39 @@ export default {
     fetchData: Function,
   },
 
-  register() {
-    if (this.email && this.name && this.phone && this.branch && this.year) {
-      let email = this.email.toLowerCase().trim();
-      let name = this.name.toLowerCase().trim();
-      this.fetchData(
-        "check",
-        {
-          event: this.event,
-          email: email,
-          name: name,
-          phone: this.phone,
-          branch: this.branch,
-          year: this.year,
-        },
-        (json) => {
-          json = JSON.parse(JSON.stringify(json));
-          if (json.status == "true") {
-            this.toggleRegister();
-            window.alert("Successfully Registered");
-          } else {
-            if (json.status == "") {
-              window.alert("Maximum Registrations Reached!");
+  methods: {
+    register() {
+      if (this.email && this.name && this.phone && this.branch && this.year) {
+        let email = this.email.toLowerCase().trim();
+        let name = this.name.toLowerCase().trim();
+        this.fetchData(
+          "check",
+          {
+            event: this.event,
+            email: email,
+            name: name,
+            phone: this.phone,
+            branch: this.branch,
+            year: this.year,
+          },
+          (json) => {
+            json = JSON.parse(JSON.stringify(json));
+            if (json.status == "true") {
+              this.toggleRegister();
+              window.alert("Successfully Registered");
             } else {
-              window.alert("Server Error!");
+              if (json.status == "") {
+                window.alert("Maximum Registrations Reached!");
+              } else {
+                window.alert("Server Error!");
+              }
             }
           }
-        }
-      );
-    } else {
-      window.alert("All fields are required");
-    }
+        );
+      } else {
+        window.alert("All fields are required");
+      }
+    },
   },
 };
 </script>
