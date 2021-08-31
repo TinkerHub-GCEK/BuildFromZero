@@ -8,13 +8,10 @@ export default createStore({
   },
 
   mutations: {
-    changeLogin(state) {
+    changeLogin(state, data) {
       state.logged = !state.logged;
-    },
-
-    changeKey(state, email, key) {
-      state.email = email;
-      state.key = key;
+      state.email = data.email;
+      state.key = data.key;
     },
   },
 

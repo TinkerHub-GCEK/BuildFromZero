@@ -133,14 +133,12 @@ app.post("/get", async (req, res) => {
     }).sort({
       date: 1,
     });
-    console.log("Hi");
     res.send({
       status: "true",
       upcoming: upcoming,
       previous: previous,
     });
-  } catch (e) {
-    console.log(e);
+  } catch {
     res.status(404).send({ status: "false" });
   }
 });
@@ -160,5 +158,8 @@ app.post("/registrations", async (req, res) => {
 });
 
 app.listen(process.env.PORT || 3000, () => {
-  console.log("running");
+  console.log(
+    "running at http://localhost:" +
+      (process.env.PORT ? process.env.PORT : 3000)
+  );
 });
