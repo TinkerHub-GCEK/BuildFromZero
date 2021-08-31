@@ -66,8 +66,8 @@ export default {
         },
       },
       event: this.current.event ? this.current.event : "",
-      date: this.current.event ? this.current.date : "",
-      time: this.current.event ? this.current.time : "",
+      date: this.current.event ? getDate() : "",
+      time: this.current.event ? getTime() : "",
       location: this.current.event ? this.current.location : "",
       description: this.current.event ? this.current.description : "",
       max: this.current.event ? this.current.max : 0,
@@ -85,6 +85,36 @@ export default {
     current: Object,
     getEvents: Function,
     fetchData: Function,
+  },
+
+  computed: {
+    appendLeadingZeroes(n) {
+      if (n <= 9) {
+        return "0" + n;
+      }
+      return n;
+    },
+
+    getDate() {
+      let date = new Date(this.current.date);
+      return (
+        date.getFullYear() +
+        "-" +
+        this.appendLeadingZeroes(date.getMonth() + 1) +
+        "-" +
+        this.appendLeadingZeroes(date.getDay())
+      );
+    },
+
+    getTime() {
+      let date = new Date(this.current.date);
+
+      return (
+        appendLeadingZeroes(date.getHours()) +
+        ":" +
+        appendLeadingZeroes(date.getMinutes())
+      );
+    },
   },
 
   methods: {
