@@ -29,6 +29,12 @@
             </p>
           </div>
           <p v-html="current.description"></p>
+          <button
+            v-if="!logged && this.currentEvent < this.upcoming.length"
+            @click="toggleRegister"
+          >
+            Register
+          </button>
           <button v-if="logged" @click="toggleEdit">Edit Event</button>
           <button v-if="logged" @click="toggleRegistrations">
             Registrations
