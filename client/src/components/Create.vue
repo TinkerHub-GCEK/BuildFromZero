@@ -50,6 +50,34 @@
 <script>
 import { quillEditor } from "vue3-quill";
 
+const appendLeadingZeroes = (n) => {
+  if (n <= 9) {
+    return "0" + n;
+  }
+  return n;
+};
+
+const getDate = (current) => {
+  const date = new Date(current);
+  return (
+    date.getFullYear() +
+    "-" +
+    appendLeadingZeroes(date.getMonth() + 1) +
+    "-" +
+    appendLeadingZeroes(date.getDay())
+  );
+};
+
+const getTime = (current) => {
+  const date = new Date(current);
+
+  return (
+    appendLeadingZeroes(date.getHours()) +
+    ":" +
+    appendLeadingZeroes(date.getMinutes())
+  );
+};
+
 export default {
   name: "Create",
 
@@ -66,8 +94,8 @@ export default {
         },
       },
       event: this.current.event ? this.current.event : "",
-      date: this.current.event ? this.getDate() : "",
-      time: this.current.event ? this.getTime() : "",
+      date: this.current.event ? getDate(this.current.date) : "",
+      time: this.current.event ? getTime(this.current.date) : "",
       location: this.current.event ? this.current.location : "",
       description: this.current.event ? this.current.description : "",
       max: this.current.event ? this.current.max : 0,
@@ -85,36 +113,6 @@ export default {
     current: Object,
     getEvents: Function,
     fetchData: Function,
-  },
-
-  computed: {
-    appendLeadingZeroes(n) {
-      if (n <= 9) {
-        return "0" + n;
-      }
-      return n;
-    },
-
-    getDate() {
-      let date = new Date(this.current.date);
-      return (
-        date.getFullYear() +
-        "-" +
-        this.appendLeadingZeroes(date.getMonth() + 1) +
-        "-" +
-        this.appendLeadingZeroes(date.getDay())
-      );
-    },
-
-    getTime() {
-      let date = new Date(this.current.date);
-
-      return (
-        this.appendLeadingZeroes(date.getHours()) +
-        ":" +
-        this.appendLeadingZeroes(date.getMinutes())
-      );
-    },
   },
 
   methods: {
@@ -138,7 +136,7 @@ export default {
         this.image
       ) {
         if (this.$store.state.key && this.$store.state.email) {
-          let date = new Date(this.date + "T" + this.time);
+          const date = new Date(this.date + "T" + this.time);
           this.fetchData(
             "add",
             {
@@ -180,7 +178,7 @@ export default {
         this.image
       ) {
         if (this.$store.state.key && this.$store.state.email) {
-          let date = new Date(this.date + "T" + this.time);
+          const date = new Date(this.date + "T" + this.time);
           this.fetchData(
             "update",
             {

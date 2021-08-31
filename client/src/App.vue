@@ -70,6 +70,7 @@
     v-if="register"
     :toggleRegister="toggleRegister"
     :event="current.event"
+    :getEvents="getEvents"
     :fetchData="fetchData"
   />
   <Login v-if="login" :toggleLogin="toggleLogin" :fetchData="fetchData" />
@@ -144,7 +145,7 @@ export default {
         }
         return n;
       }
-      let date = new Date(this.current.date);
+      const date = new Date(this.current.date);
       return (
         appendLeadingZeroes(date.getDay()) +
         "-" +

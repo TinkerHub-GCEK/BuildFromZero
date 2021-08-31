@@ -53,6 +53,7 @@ export default {
   props: {
     toggleRegister: Function,
     event: String,
+    getEvents: Function,
     fetchData: Function,
   },
 
@@ -60,10 +61,10 @@ export default {
     register() {
       console.log(this.email, this.name, this.phone, this.branch, this.year);
       if (this.email && this.name && this.phone && this.branch && this.year) {
-        let email = this.email.toLowerCase().trim();
-        let name = this.name.toLowerCase().trim();
+        const email = this.email.toLowerCase().trim();
+        const name = this.name.toLowerCase().trim();
         this.fetchData(
-          "check",
+          "register",
           {
             event: this.event,
             email: email,
@@ -76,6 +77,7 @@ export default {
             json = JSON.parse(JSON.stringify(json));
             if (json.status == "true") {
               this.toggleRegister();
+              this.getEvents();
               window.alert("Successfully Registered");
             } else {
               if (json.status == "") {

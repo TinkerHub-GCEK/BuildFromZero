@@ -35,7 +35,7 @@ export default {
   methods: {
     login() {
       if (this.email && this.password) {
-        let email = this.email.toLowerCase().trim();
+        const email = this.email.toLowerCase().trim();
         this.fetchData(
           "check",
           {

@@ -105,6 +105,7 @@ table {
   border-spacing: 0;
   width: 100%;
   border: 1px solid #ddd;
+  border-radius: 0.625em;
 }
 
 th,
