@@ -110,9 +110,9 @@ export default {
       let date = new Date(this.current.date);
 
       return (
-        appendLeadingZeroes(date.getHours()) +
+        this.appendLeadingZeroes(date.getHours()) +
         ":" +
-        appendLeadingZeroes(date.getMinutes())
+        this.appendLeadingZeroes(date.getMinutes())
       );
     },
   },
