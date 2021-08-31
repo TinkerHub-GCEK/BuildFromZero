@@ -135,6 +135,20 @@ app.post("/get", async (req, res) => {
   }
 });
 
+app.post("/registrations", async (req, res) => {
+  try {
+    const check = await auth(req.body.email, req.body.pass);
+    if (check) {
+      let result = await Registrations.find({
+        event: req.body.event,
+      });
+      res.send({ status: "true", result: result });
+    } else {
+      res.send({ status: "false" });
+    }
+  } catch {}
+});
+
 app.listen(process.env.PORT || 3000, () => {
   console.log("running");
 });

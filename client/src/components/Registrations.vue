@@ -1,0 +1,103 @@
+<template>
+  <div class="wrap">
+    <div class="popup">
+      <h2>Registrations</h2>
+      <div class="fix">
+        <table>
+          <tr>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Phone</th>
+            <th>Branch</th>
+            <th>Year</th>
+          </tr>
+          <tr v-for="(reg, index) in result" :key="index">
+            <th>{{ reg.name }}</th>
+            <th>{{ reg.email }}</th>
+            <th>{{ reg.phone }}</th>
+            <th>{{ reg.branch }}</th>
+            <th>{{ reg.year }}</th>
+          </tr>
+        </table>
+      </div>
+      <button @click="toggleRegistrations">Close</button>
+    </div>
+  </div>
+</template>
+
+<script>
+import fetchData from "@/fetchData.js";
+
+export default {
+  name: "Registrations",
+
+  data() {
+    return {
+      result: [],
+    };
+  },
+
+  props: {
+    toggleRegistrations: Function,
+  },
+
+  created() {
+    fetchData(
+      "registrations",
+      {
+        email: this.$store.state.email,
+        pass: this.$store.state.key,
+      },
+      (json) => {
+        json = JSON.parse(json);
+        if (json.status) {
+          this.result = json.result;
+          this.toggleRegistrations();
+        } else {
+          window.alert("Server Error!");
+        }
+      }
+    );
+  },
+};
+</script>
+
+<style scoped>
+.wrap {
+  display: block;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: grid;
+  place-items: center;
+  background: rgba(0, 0, 0, 0.75);
+  backdrop-filter: blur(0.5em);
+  z-index: 3;
+}
+
+.popup {
+  width: 90%;
+  max-width: 36em;
+  height: auto;
+  max-height: 90vh;
+  padding: 2em;
+  text-align: center;
+  background-color: rgba(20, 20, 40, 0.75);
+  backdrop-filter: blur(0.5em);
+  border-radius: 0.625em;
+  box-shadow: 0 0 0.5em 0.0625em rgba(0, 0, 0, 0.1);
+}
+
+label {
+  text-align: left;
+}
+
+.fix {
+  height: auto;
+  max-height: calc(90vh - 6em);
+  overflow: hidden;
+  overflow-y: auto;
+}
+</style>

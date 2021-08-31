@@ -7,7 +7,7 @@
   <div class="home">
     <section>
       <div class="preview">
-        <div v-if="upcoming || previous">
+        <div v-if="current">
           <span></span>
           <img :src="current.image" :alt="current.event" />
           <h3>{{ current.event }}</h3>
@@ -25,45 +25,41 @@
               Registrations: <span>{{ current.registered }}</span>
             </p>
           </div>
+          <p v-html="current.description"></p>
+          <button v-if="!logged" @click="toggleRegister">Register</button>
+          <button v-if="logged" @click="toggleEdit">Edit Event</button>
+          <button v-if="logged">Registrations</button>
         </div>
-        <p v-html="current.description"></p>
-        <button v-if="!logged" @click="toggleRegister">Register</button>
-        <button v-if="logged" @click="toggleEdit">Edit Event</button>
-        <button v-if="logged">Registrations</button>
       </div>
       <div class="sidebar">
-        <div v-if="upcoming">
-          <h3>Upcoming/Current Events</h3>
-          <div
-            class="event"
-            v-for="(event, index) in upcoming"
-            :key="index"
-            @click="
-              (e) => {
-                preview(e, index);
-              }
-            "
-          >
-            <img :src="event.image" :alt="event.event" />
-            <h4>{{ event.event }}</h4>
-          </div>
+        <h3>Upcoming/Current Events</h3>
+        <div
+          class="event"
+          v-for="(event, index) in upcoming"
+          :key="index"
+          @click="
+            (e) => {
+              preview(e, index);
+            }
+          "
+        >
+          <img :src="event.image" :alt="event.event" />
+          <h4>{{ event.event }}</h4>
         </div>
         <br />
-        <div v-if="previous">
-          <h3>Previous Events</h3>
-          <div
-            class="event"
-            v-for="(event, index) in previous"
-            :key="index"
-            @click="
-              (e) => {
-                preview(e, upcoming.length + index);
-              }
-            "
-          >
-            <img :src="event.image" :alt="event.event" />
-            <h4>{{ event.event }}</h4>
-          </div>
+        <h3>Previous Events</h3>
+        <div
+          class="event"
+          v-for="(event, index) in previous"
+          :key="index"
+          @click="
+            (e) => {
+              preview(e, upcoming.length + index);
+            }
+          "
+        >
+          <img :src="event.image" :alt="event.event" />
+          <h4>{{ event.event }}</h4>
         </div>
       </div>
     </section>
@@ -136,7 +132,9 @@ export default {
   },
 
   mounted() {
-    document.querySelector(".event").classList.add("active");
+    if (this.current) {
+      document.querySelector(".event").classList.add("active");
+    }
   },
 
   methods: {
