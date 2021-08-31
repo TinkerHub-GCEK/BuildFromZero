@@ -94,7 +94,7 @@ app.post("/update", async (req, res) => {
 app.post("/register", async (req, res) => {
   try {
     let event = await Events.findOne({ event: req.body.event });
-    if (event.max == 0 || event.registered != event.max) {
+    if (event.max && event.registered < event.max) {
       let newRegister = new Registrations({
         event: req.body.event,
         name: req.body.name,
@@ -102,7 +102,6 @@ app.post("/register", async (req, res) => {
         phone: req.body.phone,
         branch: req.body.branch,
         year: req.body.year,
-        school: req.body.school ? req.body.school : "",
       });
       await newRegister.save();
       await Events.findOneAndUpdate(
