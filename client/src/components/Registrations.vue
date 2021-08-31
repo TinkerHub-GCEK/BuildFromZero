@@ -38,6 +38,7 @@ export default {
   props: {
     toggleRegistrations: Function,
     fetchData: Function,
+    event: String,
   },
 
   created() {
@@ -46,6 +47,7 @@ export default {
       {
         email: this.$store.state.email,
         pass: this.$store.state.key,
+        event: this.event,
       },
       (json) => {
         json = JSON.parse(JSON.stringify(json));

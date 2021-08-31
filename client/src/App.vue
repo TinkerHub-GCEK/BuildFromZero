@@ -91,6 +91,7 @@
   <Registrations
     v-if="registrations"
     :toggleRegistrations="toggleRegistrations"
+    :event="current.event"
     :fetchData="fetchData"
   />
   <vue-progress-bar></vue-progress-bar>
