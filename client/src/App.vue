@@ -37,34 +37,38 @@
         </div>
       </div>
       <div class="sidebar">
-        <h3>Upcoming/Current Events</h3>
-        <div
-          class="event"
-          v-for="(event, index) in upcoming"
-          :key="index"
-          @click="
-            (e) => {
-              preview(e, index);
-            }
-          "
-        >
-          <img :src="event.image" :alt="event.event" />
-          <h4>{{ event.event }}</h4>
+        <div v-if="upcoming[0]">
+          <h3>Upcoming/Current Events</h3>
+          <div
+            class="event"
+            v-for="(event, index) in upcoming"
+            :key="index"
+            @click="
+              (e) => {
+                preview(e, index);
+              }
+            "
+          >
+            <img :src="event.image" :alt="event.event" />
+            <h4>{{ event.event }}</h4>
+          </div>
         </div>
         <br />
-        <h3>Previous Events</h3>
-        <div
-          class="event"
-          v-for="(event, index) in previous"
-          :key="index"
-          @click="
-            (e) => {
-              preview(e, upcoming.length + index);
-            }
-          "
-        >
-          <img :src="event.image" :alt="event.event" />
-          <h4>{{ event.event }}</h4>
+        <div v-if="previous[0]">
+          <h3>Previous Events</h3>
+          <div
+            class="event"
+            v-for="(event, index) in previous"
+            :key="index"
+            @click="
+              (e) => {
+                preview(e, upcoming.length + index);
+              }
+            "
+          >
+            <img :src="event.image" :alt="event.event" />
+            <h4>{{ event.event }}</h4>
+          </div>
         </div>
       </div>
     </section>
@@ -107,6 +111,13 @@ import Login from "./components/Login.vue";
 import Create from "./components/Create.vue";
 import Registrations from "./components/Registrations.vue";
 
+const appendLeadingZeroes = (num) => {
+  if (num <= 9) {
+    return "0" + num;
+  }
+  return num;
+};
+
 export default {
   name: "App",
 
@@ -142,20 +153,13 @@ export default {
         : this.previous[this.currentEvent - this.upcoming.length];
     },
 
-    appendLeadingZeroes(num) {
-      if (num <= 9) {
-        return "0" + num;
-      }
-      return num;
-    },
-
     getDate() {
       const date = new Date(this.current.date);
 
       return (
-        this.appendLeadingZeroes(date.getDay()) +
+        appendLeadingZeroes(date.getDay()) +
         "-" +
-        this.appendLeadingZeroes(date.getMonth() + 1) +
+        appendLeadingZeroes(date.getMonth() + 1) +
         "-" +
         date.getFullYear()
       );
@@ -165,13 +169,13 @@ export default {
       const date = new Date(this.current.date);
 
       return date.getHours() <= 12
-        ? this.appendLeadingZeroes(date.getHours()) +
+        ? appendLeadingZeroes(date.getHours()) +
             ":" +
-            this.appendLeadingZeroes(date.getMinutes()) +
+            appendLeadingZeroes(date.getMinutes()) +
             "AM"
-        : this.appendLeadingZeroes(date.getHours() - 12) +
+        : appendLeadingZeroes(date.getHours() - 12) +
             ":" +
-            this.appendLeadingZeroes(date.getMinutes()) +
+            appendLeadingZeroes(date.getMinutes()) +
             "PM";
     },
   },
@@ -413,6 +417,11 @@ section {
   backdrop-filter: blur(0.5em);
   border-radius: 0.625em;
   box-shadow: 0 0 0.5em 0.0625em rgba(0, 0, 0, 0.1);
+}
+
+.sidebar img {
+  width: 100%;
+  height: auto;
 }
 
 img {

@@ -70,7 +70,7 @@ app.post("/update", async (req, res) => {
   try {
     const check = await auth(req.body.email, req.body.pass);
     if (check) {
-      await Events.findByIdAndUpdate(
+      await Events.findOneAndUpdate(
         { event: req.body.oldevent },
         {
           $set: {
