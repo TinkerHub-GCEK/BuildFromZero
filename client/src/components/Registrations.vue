@@ -96,7 +96,7 @@ label {
 
 .fix {
   height: auto;
-  max-height: calc(90vh - 6em);
+  max-height: calc(90vh - 12em);
   overflow: hidden;
   overflow-y: auto;
 }

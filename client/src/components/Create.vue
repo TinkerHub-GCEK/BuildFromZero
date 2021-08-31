@@ -39,9 +39,8 @@
           {{ image ? "Uploaded" : "Upload" }}
         </button>
       </div>
-
-      <button @click="() => (current ? update() : create())">
-        {{ current ? "Update" : "Create" }}
+      <button @click="() => (isCurrent ? update() : create())">
+        {{ isCurrent ? "Update" : "Create" }}
       </button>
       <button @click="toggleCreate">Cancel</button>
     </div>
@@ -67,13 +66,14 @@ export default {
           ],
         },
       },
-      event: this.current ? this.current.event : "",
-      date: this.current ? this.current.date : "",
-      time: this.current ? this.current.time : "",
-      location: this.current ? this.current.location : "",
-      description: this.current ? this.current.description : "",
-      max: this.current ? this.current.max : 0,
-      image: this.current ? this.current.image : "",
+      event: this.current.event ? this.current.event : "",
+      date: this.current.event ? this.current.date : "",
+      time: this.current.event ? this.current.time : "",
+      location: this.current.event ? this.current.location : "",
+      description: this.current.event ? this.current.description : "",
+      max: this.current.event ? this.current.max : 0,
+      image: this.current.event ? this.current.image : "",
+      isCurrent: this.current.event ? true : false,
     };
   },
 
@@ -213,7 +213,7 @@ export default {
 
 .fix {
   height: auto;
-  max-height: calc(90vh - 6em);
+  max-height: calc(90vh - 12em);
   overflow: hidden;
   overflow-y: auto;
 }
