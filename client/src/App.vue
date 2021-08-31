@@ -132,16 +132,13 @@ export default {
       if (json.status == "true") {
         this.upcoming = json.upcoming;
         this.previous = json.previous;
+        if (this.current) {
+          document.querySelector(".event").classList.add("active");
+        }
       } else {
         window.alert("Server Error!");
       }
     });
-  },
-
-  mounted() {
-    if (this.current) {
-      document.querySelector(".event").classList.add("active");
-    }
   },
 
   methods: {
@@ -167,7 +164,9 @@ export default {
 
     preview(e, index) {
       this.currentEvent = index;
-      document.querySelector(".active").classList.remove("active");
+      try {
+        document.querySelector(".active").classList.remove("active");
+      } catch {}
       e.path[1].classList.add("active");
       window.scrollTo(0, 0);
     },
