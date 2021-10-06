@@ -1,0 +1,1065 @@
+define(['dart_sdk', 'packages/flutter/src/widgets/widget_span.dart', 'packages/introduction_screen/src/ui/intro_content.dart', 'packages/flutter/src/material/page.dart', 'packages/visitor_tracker/services/auth_state.dart', 'packages/flutter/src/painting/strut_style.dart', 'packages/introduction_screen/src/model/page_decoration.dart', 'packages/flutter/src/painting/alignment.dart', 'packages/flutter/src/painting/edge_insets.dart', 'packages/flutter/src/material/colors.dart', 'packages/introduction_screen/src/model/page_view_model.dart', 'packages/flutter/src/material/icon_button.dart', 'packages/flutter/src/painting/colors.dart', 'packages/flutter/src/widgets/icon.dart', 'packages/flutter/src/widgets/icon_data.dart', 'packages/flutter/src/animation/curves.dart', 'packages/dots_indicator/src/dots_decorator.dart', 'packages/flutter/src/painting/rounded_rectangle_border.dart', 'packages/flutter/src/painting/borders.dart', 'packages/flutter/src/painting/border_radius.dart', 'packages/flutter/src/painting/circle_border.dart', 'packages/flutter/src/painting/shape_decoration.dart'], (function load__packages__visitor_tracker__utils__onboarding_dart(dart_sdk, packages__flutter__src__widgets__widget_span$46dart, packages__introduction_screen__src__ui__intro_content$46dart, packages__flutter__src__material__page$46dart, packages__visitor_tracker__services__auth_state$46dart, packages__flutter__src__painting__strut_style$46dart, packages__introduction_screen__src__model__page_decoration$46dart, packages__flutter__src__painting__alignment$46dart, packages__flutter__src__painting__edge_insets$46dart, packages__flutter__src__material__colors$46dart, packages__introduction_screen__src__model__page_view_model$46dart, packages__flutter__src__material__icon_button$46dart, packages__flutter__src__painting__colors$46dart, packages__flutter__src__widgets__icon$46dart, packages__flutter__src__widgets__icon_data$46dart, packages__flutter__src__animation__curves$46dart, packages__dots_indicator__src__dots_decorator$46dart, packages__flutter__src__painting__rounded_rectangle_border$46dart, packages__flutter__src__painting__borders$46dart, packages__flutter__src__painting__border_radius$46dart, packages__flutter__src__painting__circle_border$46dart, packages__flutter__src__painting__shape_decoration$46dart) {
+  'use strict';
+  const core = dart_sdk.core;
+  const ui = dart_sdk.ui;
+  const _interceptors = dart_sdk._interceptors;
+  const dart = dart_sdk.dart;
+  const dartx = dart_sdk.dartx;
+  const framework = packages__flutter__src__widgets__widget_span$46dart.src__widgets__framework;
+  const navigator = packages__flutter__src__widgets__widget_span$46dart.src__widgets__navigator;
+  const widget_inspector = packages__flutter__src__widgets__widget_span$46dart.src__widgets__widget_inspector;
+  const image = packages__flutter__src__widgets__widget_span$46dart.src__widgets__image;
+  const text = packages__flutter__src__widgets__widget_span$46dart.src__widgets__text;
+  const introduction_screen = packages__introduction_screen__src__ui__intro_content$46dart.src__introduction_screen;
+  const page = packages__flutter__src__material__page$46dart.src__material__page;
+  const auth_state = packages__visitor_tracker__services__auth_state$46dart.services__auth_state;
+  const text_style = packages__flutter__src__painting__strut_style$46dart.src__painting__text_style;
+  const page_decoration = packages__introduction_screen__src__model__page_decoration$46dart.src__model__page_decoration;
+  const alignment = packages__flutter__src__painting__alignment$46dart.src__painting__alignment;
+  const edge_insets = packages__flutter__src__painting__edge_insets$46dart.src__painting__edge_insets;
+  const colors = packages__flutter__src__material__colors$46dart.src__material__colors;
+  const page_view_model = packages__introduction_screen__src__model__page_view_model$46dart.src__model__page_view_model;
+  const ink_well = packages__flutter__src__material__icon_button$46dart.src__material__ink_well;
+  const colors$ = packages__flutter__src__painting__colors$46dart.src__painting__colors;
+  const icon = packages__flutter__src__widgets__icon$46dart.src__widgets__icon;
+  const icon_data = packages__flutter__src__widgets__icon_data$46dart.src__widgets__icon_data;
+  const curves = packages__flutter__src__animation__curves$46dart.src__animation__curves;
+  const dots_decorator = packages__dots_indicator__src__dots_decorator$46dart.src__dots_decorator;
+  const rounded_rectangle_border = packages__flutter__src__painting__rounded_rectangle_border$46dart.src__painting__rounded_rectangle_border;
+  const borders = packages__flutter__src__painting__borders$46dart.src__painting__borders;
+  const border_radius = packages__flutter__src__painting__border_radius$46dart.src__painting__border_radius;
+  const circle_border = packages__flutter__src__painting__circle_border$46dart.src__painting__circle_border;
+  const shape_decoration = packages__flutter__src__painting__shape_decoration$46dart.src__painting__shape_decoration;
+  var onboarding = Object.create(dart.library);
+  dart._checkModuleNullSafetyMode(false);
+  var T = {
+    IntroductionScreenStateL: () => (T.IntroductionScreenStateL = dart.constFn(dart.legacy(introduction_screen.IntroductionScreenState)))(),
+    GlobalKeyOfIntroductionScreenStateL: () => (T.GlobalKeyOfIntroductionScreenStateL = dart.constFn(framework.GlobalKey$(T.IntroductionScreenStateL())))(),
+    _LocationL: () => (T._LocationL = dart.constFn(dart.legacy(widget_inspector._Location)))(),
+    AuthL: () => (T.AuthL = dart.constFn(dart.legacy(auth_state.Auth)))(),
+    BuildContextL: () => (T.BuildContextL = dart.constFn(dart.legacy(framework.BuildContext)))(),
+    BuildContextLToAuthL: () => (T.BuildContextLToAuthL = dart.constFn(dart.fnType(T.AuthL(), [T.BuildContextL()])))(),
+    boolL: () => (T.boolL = dart.constFn(dart.legacy(core.bool)))(),
+    RouteL: () => (T.RouteL = dart.constFn(dart.legacy(navigator.Route)))(),
+    RouteLToboolL: () => (T.RouteLToboolL = dart.constFn(dart.fnType(T.boolL(), [T.RouteL()])))(),
+    PageViewModelL: () => (T.PageViewModelL = dart.constFn(dart.legacy(page_view_model.PageViewModel)))(),
+    JSArrayOfPageViewModelL: () => (T.JSArrayOfPageViewModelL = dart.constFn(_interceptors.JSArray$(T.PageViewModelL())))(),
+    VoidTovoid: () => (T.VoidTovoid = dart.constFn(dart.fnType(dart.void, [])))(),
+    intL: () => (T.intL = dart.constFn(dart.legacy(core.int)))(),
+    ColorL: () => (T.ColorL = dart.constFn(dart.legacy(ui.Color)))()
+  };
+  const CT = Object.create({
+    _: () => (C, CT)
+  });
+  dart.defineLazy(CT, {
+    get C1() {
+      return C[1] = dart.constList([], T._LocationL());
+    },
+    get C0() {
+      return C[0] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[1] || CT.C1,
+        [_Location_name]: null,
+        [_Location_column]: 47,
+        [_Location_line]: 18,
+        [_Location_file]: "file:///C:/AA-workouts/Visitor-Tracker/lib/utils/onboarding.dart"
+      });
+    },
+    get C4() {
+      return C[4] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "name",
+        [_Location_column]: 50,
+        [_Location_line]: 24,
+        [_Location_file]: null
+      });
+    },
+    get C5() {
+      return C[5] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "width",
+        [_Location_column]: 52,
+        [_Location_line]: 24,
+        [_Location_file]: null
+      });
+    },
+    get C3() {
+      return C[3] = dart.constList([C[4] || CT.C4, C[5] || CT.C5], T._LocationL());
+    },
+    get C2() {
+      return C[2] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[3] || CT.C3,
+        [_Location_name]: null,
+        [_Location_column]: 18,
+        [_Location_line]: 24,
+        [_Location_file]: "file:///C:/AA-workouts/Visitor-Tracker/lib/utils/onboarding.dart"
+      });
+    },
+    get C6() {
+      return C[6] = dart.const({
+        __proto__: text_style.TextStyle.prototype,
+        [TextStyle_fontFeatures]: null,
+        [TextStyle_shadows]: null,
+        [TextStyle_debugLabel]: null,
+        [TextStyle_decorationThickness]: null,
+        [TextStyle_decorationStyle]: null,
+        [TextStyle_decorationColor]: null,
+        [TextStyle_decoration]: null,
+        [TextStyle_background]: null,
+        [TextStyle_foreground]: null,
+        [TextStyle_locale]: null,
+        [TextStyle_leadingDistribution]: null,
+        [TextStyle_height]: null,
+        [TextStyle_textBaseline]: null,
+        [TextStyle_wordSpacing]: null,
+        [TextStyle_letterSpacing]: null,
+        [TextStyle_fontStyle]: null,
+        [TextStyle_fontWeight]: null,
+        [TextStyle_fontSize]: 19,
+        [TextStyle__package]: null,
+        [TextStyle__fontFamilyFallback]: null,
+        [TextStyle_fontFamily]: null,
+        [TextStyle_backgroundColor]: null,
+        [TextStyle_color]: null,
+        [TextStyle_inherit]: true
+      });
+    },
+    get C8() {
+      return C[8] = dart.const({
+        __proto__: alignment.Alignment.prototype,
+        [Alignment_y]: 1,
+        [Alignment_x]: 0
+      });
+    },
+    get C9() {
+      return C[9] = dart.const({
+        __proto__: alignment.Alignment.prototype,
+        [Alignment_y]: -1,
+        [Alignment_x]: 0
+      });
+    },
+    get C10() {
+      return C[10] = dart.const({
+        __proto__: edge_insets.EdgeInsets.prototype,
+        [EdgeInsets_bottom]: 24,
+        [EdgeInsets_right]: 0,
+        [EdgeInsets_top]: 24,
+        [EdgeInsets_left]: 0
+      });
+    },
+    get C11() {
+      return C[11] = dart.const({
+        __proto__: edge_insets.EdgeInsets.prototype,
+        [EdgeInsets_bottom]: 16,
+        [EdgeInsets_right]: 16,
+        [EdgeInsets_top]: 0,
+        [EdgeInsets_left]: 16
+      });
+    },
+    get C12() {
+      return C[12] = dart.const({
+        __proto__: edge_insets.EdgeInsets.prototype,
+        [EdgeInsets_bottom]: 24,
+        [EdgeInsets_right]: 0,
+        [EdgeInsets_top]: 16,
+        [EdgeInsets_left]: 0
+      });
+    },
+    get C13() {
+      return C[13] = dart.const({
+        __proto__: edge_insets.EdgeInsets.prototype,
+        [EdgeInsets_bottom]: 16,
+        [EdgeInsets_right]: 16,
+        [EdgeInsets_top]: 16,
+        [EdgeInsets_left]: 16
+      });
+    },
+    get C14() {
+      return C[14] = dart.const({
+        __proto__: edge_insets.EdgeInsets.prototype,
+        [EdgeInsets_bottom]: 0,
+        [EdgeInsets_right]: 0,
+        [EdgeInsets_top]: 0,
+        [EdgeInsets_left]: 0
+      });
+    },
+    get C16() {
+      return C[16] = dart.const({
+        __proto__: ui.FontWeight.prototype,
+        [FontWeight_index]: 6
+      });
+    },
+    get C17() {
+      return C[17] = dart.const({
+        __proto__: ui.Color.prototype,
+        [Color_value]: 4285293567.0
+      });
+    },
+    get C15() {
+      return C[15] = dart.const({
+        __proto__: text_style.TextStyle.prototype,
+        [TextStyle_fontFeatures]: null,
+        [TextStyle_shadows]: null,
+        [TextStyle_debugLabel]: null,
+        [TextStyle_decorationThickness]: null,
+        [TextStyle_decorationStyle]: null,
+        [TextStyle_decorationColor]: null,
+        [TextStyle_decoration]: null,
+        [TextStyle_background]: null,
+        [TextStyle_foreground]: null,
+        [TextStyle_locale]: null,
+        [TextStyle_leadingDistribution]: null,
+        [TextStyle_height]: null,
+        [TextStyle_textBaseline]: null,
+        [TextStyle_wordSpacing]: null,
+        [TextStyle_letterSpacing]: null,
+        [TextStyle_fontStyle]: null,
+        [TextStyle_fontWeight]: C[16] || CT.C16,
+        [TextStyle_fontSize]: 28,
+        [TextStyle__package]: null,
+        [TextStyle__fontFamilyFallback]: null,
+        [TextStyle_fontFamily]: null,
+        [TextStyle_backgroundColor]: null,
+        [TextStyle_color]: C[17] || CT.C17,
+        [TextStyle_inherit]: true
+      });
+    },
+    get C18() {
+      return C[18] = dart.const({
+        __proto__: ui.Color.prototype,
+        [Color_value]: 4294967295.0
+      });
+    },
+    get C7() {
+      return C[7] = dart.const({
+        __proto__: page_decoration.PageDecoration.prototype,
+        [PageDecoration_fullScreen]: false,
+        [PageDecoration_imageAlignment]: C[8] || CT.C8,
+        [PageDecoration_bodyAlignment]: C[9] || CT.C9,
+        [PageDecoration_footerPadding]: C[10] || CT.C10,
+        [PageDecoration_descriptionPadding]: C[11] || CT.C11,
+        [PageDecoration_titlePadding]: C[12] || CT.C12,
+        [PageDecoration_contentMargin]: C[13] || CT.C13,
+        [PageDecoration_imagePadding]: C[14] || CT.C14,
+        [PageDecoration_bodyFlex]: 1,
+        [PageDecoration_imageFlex]: 1,
+        [PageDecoration_boxDecoration]: null,
+        [PageDecoration_bodyTextStyle]: C[6] || CT.C6,
+        [PageDecoration_titleTextStyle]: C[15] || CT.C15,
+        [PageDecoration_pageColor]: C[18] || CT.C18
+      });
+    },
+    get C22() {
+      return C[22] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "data",
+        [_Location_column]: 11,
+        [_Location_line]: 91,
+        [_Location_file]: null
+      });
+    },
+    get C23() {
+      return C[23] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "style",
+        [_Location_column]: 11,
+        [_Location_line]: 92,
+        [_Location_file]: null
+      });
+    },
+    get C21() {
+      return C[21] = dart.constList([C[22] || CT.C22, C[23] || CT.C23], T._LocationL());
+    },
+    get C20() {
+      return C[20] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[21] || CT.C21,
+        [_Location_name]: null,
+        [_Location_column]: 22,
+        [_Location_line]: 90,
+        [_Location_file]: "file:///C:/AA-workouts/Visitor-Tracker/lib/utils/onboarding.dart"
+      });
+    },
+    get C27() {
+      return C[27] = dart.const({
+        __proto__: ui.Color.prototype,
+        [Color_value]: 4294638330.0
+      });
+    },
+    get C28() {
+      return C[28] = dart.const({
+        __proto__: ui.Color.prototype,
+        [Color_value]: 4294309365.0
+      });
+    },
+    get C29() {
+      return C[29] = dart.const({
+        __proto__: ui.Color.prototype,
+        [Color_value]: 4293848814.0
+      });
+    },
+    get C30() {
+      return C[30] = dart.const({
+        __proto__: ui.Color.prototype,
+        [Color_value]: 4292927712.0
+      });
+    },
+    get C31() {
+      return C[31] = dart.const({
+        __proto__: ui.Color.prototype,
+        [Color_value]: 4292269782.0
+      });
+    },
+    get C32() {
+      return C[32] = dart.const({
+        __proto__: ui.Color.prototype,
+        [Color_value]: 4290624957.0
+      });
+    },
+    get C33() {
+      return C[33] = dart.const({
+        __proto__: ui.Color.prototype,
+        [Color_value]: 4288585374.0
+      });
+    },
+    get C34() {
+      return C[34] = dart.const({
+        __proto__: ui.Color.prototype,
+        [Color_value]: 4285887861.0
+      });
+    },
+    get C35() {
+      return C[35] = dart.const({
+        __proto__: ui.Color.prototype,
+        [Color_value]: 4284572001.0
+      });
+    },
+    get C36() {
+      return C[36] = dart.const({
+        __proto__: ui.Color.prototype,
+        [Color_value]: 4282532418.0
+      });
+    },
+    get C37() {
+      return C[37] = dart.const({
+        __proto__: ui.Color.prototype,
+        [Color_value]: 4281348144.0
+      });
+    },
+    get C38() {
+      return C[38] = dart.const({
+        __proto__: ui.Color.prototype,
+        [Color_value]: 4280361249.0
+      });
+    },
+    get C26() {
+      return C[26] = dart.constMap(T.intL(), T.ColorL(), [50, C[27] || CT.C27, 100, C[28] || CT.C28, 200, C[29] || CT.C29, 300, C[30] || CT.C30, 350, C[31] || CT.C31, 400, C[32] || CT.C32, 500, C[33] || CT.C33, 600, C[34] || CT.C34, 700, C[35] || CT.C35, 800, C[36] || CT.C36, 850, C[37] || CT.C37, 900, C[38] || CT.C38]);
+    },
+    get C25() {
+      return C[25] = dart.const({
+        __proto__: colors.MaterialColor.prototype,
+        [Color_value]: 4288585374.0,
+        [ColorSwatch__swatch]: C[26] || CT.C26
+      });
+    },
+    get C24() {
+      return C[24] = dart.const({
+        __proto__: text_style.TextStyle.prototype,
+        [TextStyle_fontFeatures]: null,
+        [TextStyle_shadows]: null,
+        [TextStyle_debugLabel]: null,
+        [TextStyle_decorationThickness]: null,
+        [TextStyle_decorationStyle]: null,
+        [TextStyle_decorationColor]: null,
+        [TextStyle_decoration]: null,
+        [TextStyle_background]: null,
+        [TextStyle_foreground]: null,
+        [TextStyle_locale]: null,
+        [TextStyle_leadingDistribution]: null,
+        [TextStyle_height]: null,
+        [TextStyle_textBaseline]: null,
+        [TextStyle_wordSpacing]: null,
+        [TextStyle_letterSpacing]: null,
+        [TextStyle_fontStyle]: null,
+        [TextStyle_fontWeight]: C[16] || CT.C16,
+        [TextStyle_fontSize]: 20,
+        [TextStyle__package]: null,
+        [TextStyle__fontFamilyFallback]: null,
+        [TextStyle_fontFamily]: null,
+        [TextStyle_backgroundColor]: null,
+        [TextStyle_color]: C[25] || CT.C25,
+        [TextStyle_inherit]: true
+      });
+    },
+    get C19() {
+      return C[19] = dart.const({
+        __proto__: text.Text.prototype,
+        [Widget__location]: C[20] || CT.C20,
+        [Widget_key]: null,
+        [Text_textHeightBehavior]: null,
+        [Text_textWidthBasis]: null,
+        [Text_semanticsLabel]: null,
+        [Text_maxLines]: null,
+        [Text_textScaleFactor]: null,
+        [Text_overflow]: null,
+        [Text_softWrap]: null,
+        [Text_locale]: null,
+        [Text_textDirection]: null,
+        [Text_textAlign]: null,
+        [Text_strutStyle]: null,
+        [Text_style]: C[24] || CT.C24,
+        [Text_textSpan]: null,
+        [Text_data]: "Skip"
+      });
+    },
+    get C41() {
+      return C[41] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "child",
+        [_Location_column]: 9,
+        [_Location_line]: 90,
+        [_Location_file]: null
+      });
+    },
+    get C42() {
+      return C[42] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "onTap",
+        [_Location_column]: 9,
+        [_Location_line]: 98,
+        [_Location_file]: null
+      });
+    },
+    get C40() {
+      return C[40] = dart.constList([C[41] || CT.C41, C[42] || CT.C42], T._LocationL());
+    },
+    get C39() {
+      return C[39] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[40] || CT.C40,
+        [_Location_name]: null,
+        [_Location_column]: 13,
+        [_Location_line]: 89,
+        [_Location_file]: "file:///C:/AA-workouts/Visitor-Tracker/lib/utils/onboarding.dart"
+      });
+    },
+    get C46() {
+      return C[46] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "icon",
+        [_Location_column]: 15,
+        [_Location_line]: 101,
+        [_Location_file]: null
+      });
+    },
+    get C47() {
+      return C[47] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "size",
+        [_Location_column]: 9,
+        [_Location_line]: 102,
+        [_Location_file]: null
+      });
+    },
+    get C48() {
+      return C[48] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "color",
+        [_Location_column]: 9,
+        [_Location_line]: 103,
+        [_Location_file]: null
+      });
+    },
+    get C45() {
+      return C[45] = dart.constList([C[46] || CT.C46, C[47] || CT.C47, C[48] || CT.C48], T._LocationL());
+    },
+    get C44() {
+      return C[44] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[45] || CT.C45,
+        [_Location_name]: null,
+        [_Location_column]: 19,
+        [_Location_line]: 100,
+        [_Location_file]: "file:///C:/AA-workouts/Visitor-Tracker/lib/utils/onboarding.dart"
+      });
+    },
+    get C49() {
+      return C[49] = dart.const({
+        __proto__: icon_data.IconData.prototype,
+        [IconData_matchTextDirection]: true,
+        [IconData_fontPackage]: null,
+        [IconData_fontFamily]: "MaterialIcons",
+        [IconData_codePoint]: 57499
+      });
+    },
+    get C43() {
+      return C[43] = dart.const({
+        __proto__: icon.Icon.prototype,
+        [Widget__location]: C[44] || CT.C44,
+        [Widget_key]: null,
+        [Icon_textDirection]: null,
+        [Icon_semanticLabel]: null,
+        [Icon_color]: C[17] || CT.C17,
+        [Icon_size]: 30,
+        [Icon_icon]: C[49] || CT.C49
+      });
+    },
+    get C53() {
+      return C[53] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "data",
+        [_Location_column]: 24,
+        [_Location_line]: 105,
+        [_Location_file]: null
+      });
+    },
+    get C54() {
+      return C[54] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "style",
+        [_Location_column]: 11,
+        [_Location_line]: 106,
+        [_Location_file]: null
+      });
+    },
+    get C52() {
+      return C[52] = dart.constList([C[53] || CT.C53, C[54] || CT.C54], T._LocationL());
+    },
+    get C51() {
+      return C[51] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[52] || CT.C52,
+        [_Location_name]: null,
+        [_Location_column]: 19,
+        [_Location_line]: 105,
+        [_Location_file]: "file:///C:/AA-workouts/Visitor-Tracker/lib/utils/onboarding.dart"
+      });
+    },
+    get C55() {
+      return C[55] = dart.const({
+        __proto__: text_style.TextStyle.prototype,
+        [TextStyle_fontFeatures]: null,
+        [TextStyle_shadows]: null,
+        [TextStyle_debugLabel]: null,
+        [TextStyle_decorationThickness]: null,
+        [TextStyle_decorationStyle]: null,
+        [TextStyle_decorationColor]: null,
+        [TextStyle_decoration]: null,
+        [TextStyle_background]: null,
+        [TextStyle_foreground]: null,
+        [TextStyle_locale]: null,
+        [TextStyle_leadingDistribution]: null,
+        [TextStyle_height]: null,
+        [TextStyle_textBaseline]: null,
+        [TextStyle_wordSpacing]: null,
+        [TextStyle_letterSpacing]: null,
+        [TextStyle_fontStyle]: null,
+        [TextStyle_fontWeight]: C[16] || CT.C16,
+        [TextStyle_fontSize]: 20,
+        [TextStyle__package]: null,
+        [TextStyle__fontFamilyFallback]: null,
+        [TextStyle_fontFamily]: null,
+        [TextStyle_backgroundColor]: null,
+        [TextStyle_color]: C[17] || CT.C17,
+        [TextStyle_inherit]: true
+      });
+    },
+    get C50() {
+      return C[50] = dart.const({
+        __proto__: text.Text.prototype,
+        [Widget__location]: C[51] || CT.C51,
+        [Widget_key]: null,
+        [Text_textHeightBehavior]: null,
+        [Text_textWidthBasis]: null,
+        [Text_semanticsLabel]: null,
+        [Text_maxLines]: null,
+        [Text_textScaleFactor]: null,
+        [Text_overflow]: null,
+        [Text_softWrap]: null,
+        [Text_locale]: null,
+        [Text_textDirection]: null,
+        [Text_textAlign]: null,
+        [Text_strutStyle]: null,
+        [Text_style]: C[55] || CT.C55,
+        [Text_textSpan]: null,
+        [Text_data]: "Done"
+      });
+    },
+    get C56() {
+      return C[56] = dart.const({
+        __proto__: edge_insets.EdgeInsets.prototype,
+        [EdgeInsets_bottom]: 12,
+        [EdgeInsets_right]: 12,
+        [EdgeInsets_top]: 12,
+        [EdgeInsets_left]: 12
+      });
+    },
+    get C57() {
+      return C[57] = dart.const({
+        __proto__: edge_insets.EdgeInsets.prototype,
+        [EdgeInsets_bottom]: 4,
+        [EdgeInsets_right]: 8,
+        [EdgeInsets_top]: 4,
+        [EdgeInsets_left]: 8
+      });
+    },
+    get C59() {
+      return C[59] = dart.const({
+        __proto__: edge_insets.EdgeInsets.prototype,
+        [EdgeInsets_bottom]: 6,
+        [EdgeInsets_right]: 6,
+        [EdgeInsets_top]: 6,
+        [EdgeInsets_left]: 6
+      });
+    },
+    get C62() {
+      return C[62] = dart.const({
+        __proto__: borders.BorderStyle.prototype,
+        [_name]: "BorderStyle.none",
+        index: 0
+      });
+    },
+    get C63() {
+      return C[63] = dart.const({
+        __proto__: ui.Color.prototype,
+        [Color_value]: 4278190080.0
+      });
+    },
+    get C61() {
+      return C[61] = dart.const({
+        __proto__: borders.BorderSide.prototype,
+        [BorderSide_style]: C[62] || CT.C62,
+        [BorderSide_width]: 0,
+        [BorderSide_color]: C[63] || CT.C63
+      });
+    },
+    get C65() {
+      return C[65] = dart.const({
+        __proto__: ui.Radius.prototype,
+        [Radius_y]: 25,
+        [Radius_x]: 25
+      });
+    },
+    get C64() {
+      return C[64] = dart.const({
+        __proto__: border_radius.BorderRadius.prototype,
+        [BorderRadius_bottomRight]: C[65] || CT.C65,
+        [BorderRadius_bottomLeft]: C[65] || CT.C65,
+        [BorderRadius_topRight]: C[65] || CT.C65,
+        [BorderRadius_topLeft]: C[65] || CT.C65
+      });
+    },
+    get C60() {
+      return C[60] = dart.const({
+        __proto__: rounded_rectangle_border.RoundedRectangleBorder.prototype,
+        [OutlinedBorder_side]: C[61] || CT.C61,
+        [RoundedRectangleBorder_borderRadius]: C[64] || CT.C64
+      });
+    },
+    get C66() {
+      return C[66] = dart.const({
+        __proto__: circle_border.CircleBorder.prototype,
+        [OutlinedBorder_side]: C[61] || CT.C61
+      });
+    },
+    get C67() {
+      return C[67] = dart.const({
+        __proto__: ui.Size.prototype,
+        [OffsetBase__dy]: 10,
+        [OffsetBase__dx]: 22
+      });
+    },
+    get C68() {
+      return C[68] = dart.const({
+        __proto__: ui.Size.prototype,
+        [OffsetBase__dy]: 10,
+        [OffsetBase__dx]: 10
+      });
+    },
+    get C58() {
+      return C[58] = dart.const({
+        __proto__: dots_decorator.DotsDecorator.prototype,
+        [DotsDecorator_spacing]: C[59] || CT.C59,
+        [DotsDecorator_activeShape]: C[60] || CT.C60,
+        [DotsDecorator_shape]: C[66] || CT.C66,
+        [DotsDecorator_activeSize]: C[67] || CT.C67,
+        [DotsDecorator_size]: C[68] || CT.C68,
+        [DotsDecorator_activeColor]: C[17] || CT.C17,
+        [DotsDecorator_color]: C[25] || CT.C25
+      });
+    },
+    get C72() {
+      return C[72] = dart.const({
+        __proto__: ui.Radius.prototype,
+        [Radius_y]: 8,
+        [Radius_x]: 8
+      });
+    },
+    get C71() {
+      return C[71] = dart.const({
+        __proto__: border_radius.BorderRadius.prototype,
+        [BorderRadius_bottomRight]: C[72] || CT.C72,
+        [BorderRadius_bottomLeft]: C[72] || CT.C72,
+        [BorderRadius_topRight]: C[72] || CT.C72,
+        [BorderRadius_topLeft]: C[72] || CT.C72
+      });
+    },
+    get C70() {
+      return C[70] = dart.const({
+        __proto__: rounded_rectangle_border.RoundedRectangleBorder.prototype,
+        [OutlinedBorder_side]: C[61] || CT.C61,
+        [RoundedRectangleBorder_borderRadius]: C[71] || CT.C71
+      });
+    },
+    get C69() {
+      return C[69] = dart.const({
+        __proto__: shape_decoration.ShapeDecoration.prototype,
+        [ShapeDecoration_shape]: C[70] || CT.C70,
+        [ShapeDecoration_shadows]: null,
+        [ShapeDecoration_image]: null,
+        [ShapeDecoration_gradient]: null,
+        [ShapeDecoration_color]: C[18] || CT.C18
+      });
+    },
+    get C75() {
+      return C[75] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "key",
+        [_Location_column]: 7,
+        [_Location_line]: 44,
+        [_Location_file]: null
+      });
+    },
+    get C76() {
+      return C[76] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "globalBackgroundColor",
+        [_Location_column]: 7,
+        [_Location_line]: 45,
+        [_Location_file]: null
+      });
+    },
+    get C77() {
+      return C[77] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "pages",
+        [_Location_column]: 7,
+        [_Location_line]: 46,
+        [_Location_file]: null
+      });
+    },
+    get C78() {
+      return C[78] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "onDone",
+        [_Location_column]: 7,
+        [_Location_line]: 83,
+        [_Location_file]: null
+      });
+    },
+    get C79() {
+      return C[79] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "showSkipButton",
+        [_Location_column]: 7,
+        [_Location_line]: 85,
+        [_Location_file]: null
+      });
+    },
+    get C80() {
+      return C[80] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "skipFlex",
+        [_Location_column]: 7,
+        [_Location_line]: 86,
+        [_Location_file]: null
+      });
+    },
+    get C81() {
+      return C[81] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "nextFlex",
+        [_Location_column]: 7,
+        [_Location_line]: 87,
+        [_Location_file]: null
+      });
+    },
+    get C82() {
+      return C[82] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "skip",
+        [_Location_column]: 7,
+        [_Location_line]: 89,
+        [_Location_file]: null
+      });
+    },
+    get C83() {
+      return C[83] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "next",
+        [_Location_column]: 7,
+        [_Location_line]: 100,
+        [_Location_file]: null
+      });
+    },
+    get C84() {
+      return C[84] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "done",
+        [_Location_column]: 7,
+        [_Location_line]: 105,
+        [_Location_file]: null
+      });
+    },
+    get C85() {
+      return C[85] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "curve",
+        [_Location_column]: 7,
+        [_Location_line]: 111,
+        [_Location_file]: null
+      });
+    },
+    get C86() {
+      return C[86] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "controlsMargin",
+        [_Location_column]: 7,
+        [_Location_line]: 112,
+        [_Location_file]: null
+      });
+    },
+    get C87() {
+      return C[87] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "controlsPadding",
+        [_Location_column]: 7,
+        [_Location_line]: 113,
+        [_Location_file]: null
+      });
+    },
+    get C88() {
+      return C[88] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "dotsDecorator",
+        [_Location_column]: 7,
+        [_Location_line]: 116,
+        [_Location_file]: null
+      });
+    },
+    get C89() {
+      return C[89] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "dotsContainerDecorator",
+        [_Location_column]: 7,
+        [_Location_line]: 125,
+        [_Location_file]: null
+      });
+    },
+    get C74() {
+      return C[74] = dart.constList([C[75] || CT.C75, C[76] || CT.C76, C[77] || CT.C77, C[78] || CT.C78, C[79] || CT.C79, C[80] || CT.C80, C[81] || CT.C81, C[82] || CT.C82, C[83] || CT.C83, C[84] || CT.C84, C[85] || CT.C85, C[86] || CT.C86, C[87] || CT.C87, C[88] || CT.C88, C[89] || CT.C89], T._LocationL());
+    },
+    get C73() {
+      return C[73] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[74] || CT.C74,
+        [_Location_name]: null,
+        [_Location_column]: 12,
+        [_Location_line]: 43,
+        [_Location_file]: "file:///C:/AA-workouts/Visitor-Tracker/lib/utils/onboarding.dart"
+      });
+    }
+  }, false);
+  var C = Array(90).fill(void 0);
+  var I = ["package:visitor_tracker/utils/onboarding.dart"];
+  onboarding.OnBoardingPage = class OnBoardingPage extends framework.StatefulWidget {
+    createState() {
+      return new onboarding._OnBoardingPageState.new();
+    }
+  };
+  (onboarding.OnBoardingPage.new = function(opts) {
+    let $36creationLocationd_0dea112b090073317d4 = opts && '$creationLocationd_0dea112b090073317d4' in opts ? opts.$creationLocationd_0dea112b090073317d4 : null;
+    onboarding.OnBoardingPage.__proto__.new.call(this, {$creationLocationd_0dea112b090073317d4: $36creationLocationd_0dea112b090073317d4});
+    ;
+  }).prototype = onboarding.OnBoardingPage.prototype;
+  dart.addTypeTests(onboarding.OnBoardingPage);
+  dart.addTypeCaches(onboarding.OnBoardingPage);
+  dart.setMethodSignature(onboarding.OnBoardingPage, () => ({
+    __proto__: dart.getMethods(onboarding.OnBoardingPage.__proto__),
+    createState: dart.fnType(dart.legacy(onboarding._OnBoardingPageState), [])
+  }));
+  dart.setLibraryUri(onboarding.OnBoardingPage, I[0]);
+  var _Location_parameterLocations = dart.privateName(widget_inspector, "_Location.parameterLocations");
+  var _Location_name = dart.privateName(widget_inspector, "_Location.name");
+  var _Location_column = dart.privateName(widget_inspector, "_Location.column");
+  var _Location_line = dart.privateName(widget_inspector, "_Location.line");
+  var _Location_file = dart.privateName(widget_inspector, "_Location.file");
+  var _onIntroEnd = dart.privateName(onboarding, "_onIntroEnd");
+  var _buildImage = dart.privateName(onboarding, "_buildImage");
+  var TextStyle_fontFeatures = dart.privateName(text_style, "TextStyle.fontFeatures");
+  var TextStyle_shadows = dart.privateName(text_style, "TextStyle.shadows");
+  var TextStyle_debugLabel = dart.privateName(text_style, "TextStyle.debugLabel");
+  var TextStyle_decorationThickness = dart.privateName(text_style, "TextStyle.decorationThickness");
+  var TextStyle_decorationStyle = dart.privateName(text_style, "TextStyle.decorationStyle");
+  var TextStyle_decorationColor = dart.privateName(text_style, "TextStyle.decorationColor");
+  var TextStyle_decoration = dart.privateName(text_style, "TextStyle.decoration");
+  var TextStyle_background = dart.privateName(text_style, "TextStyle.background");
+  var TextStyle_foreground = dart.privateName(text_style, "TextStyle.foreground");
+  var TextStyle_locale = dart.privateName(text_style, "TextStyle.locale");
+  var TextStyle_leadingDistribution = dart.privateName(text_style, "TextStyle.leadingDistribution");
+  var TextStyle_height = dart.privateName(text_style, "TextStyle.height");
+  var TextStyle_textBaseline = dart.privateName(text_style, "TextStyle.textBaseline");
+  var TextStyle_wordSpacing = dart.privateName(text_style, "TextStyle.wordSpacing");
+  var TextStyle_letterSpacing = dart.privateName(text_style, "TextStyle.letterSpacing");
+  var TextStyle_fontStyle = dart.privateName(text_style, "TextStyle.fontStyle");
+  var TextStyle_fontWeight = dart.privateName(text_style, "TextStyle.fontWeight");
+  var TextStyle_fontSize = dart.privateName(text_style, "TextStyle.fontSize");
+  var TextStyle__package = dart.privateName(text_style, "TextStyle._package");
+  var TextStyle__fontFamilyFallback = dart.privateName(text_style, "TextStyle._fontFamilyFallback");
+  var TextStyle_fontFamily = dart.privateName(text_style, "TextStyle.fontFamily");
+  var TextStyle_backgroundColor = dart.privateName(text_style, "TextStyle.backgroundColor");
+  var TextStyle_color = dart.privateName(text_style, "TextStyle.color");
+  var TextStyle_inherit = dart.privateName(text_style, "TextStyle.inherit");
+  var PageDecoration_fullScreen = dart.privateName(page_decoration, "PageDecoration.fullScreen");
+  var Alignment_y = dart.privateName(alignment, "Alignment.y");
+  var Alignment_x = dart.privateName(alignment, "Alignment.x");
+  var PageDecoration_imageAlignment = dart.privateName(page_decoration, "PageDecoration.imageAlignment");
+  var PageDecoration_bodyAlignment = dart.privateName(page_decoration, "PageDecoration.bodyAlignment");
+  var EdgeInsets_bottom = dart.privateName(edge_insets, "EdgeInsets.bottom");
+  var EdgeInsets_right = dart.privateName(edge_insets, "EdgeInsets.right");
+  var EdgeInsets_top = dart.privateName(edge_insets, "EdgeInsets.top");
+  var EdgeInsets_left = dart.privateName(edge_insets, "EdgeInsets.left");
+  var PageDecoration_footerPadding = dart.privateName(page_decoration, "PageDecoration.footerPadding");
+  var PageDecoration_descriptionPadding = dart.privateName(page_decoration, "PageDecoration.descriptionPadding");
+  var PageDecoration_titlePadding = dart.privateName(page_decoration, "PageDecoration.titlePadding");
+  var PageDecoration_contentMargin = dart.privateName(page_decoration, "PageDecoration.contentMargin");
+  var PageDecoration_imagePadding = dart.privateName(page_decoration, "PageDecoration.imagePadding");
+  var PageDecoration_bodyFlex = dart.privateName(page_decoration, "PageDecoration.bodyFlex");
+  var PageDecoration_imageFlex = dart.privateName(page_decoration, "PageDecoration.imageFlex");
+  var PageDecoration_boxDecoration = dart.privateName(page_decoration, "PageDecoration.boxDecoration");
+  var PageDecoration_bodyTextStyle = dart.privateName(page_decoration, "PageDecoration.bodyTextStyle");
+  var FontWeight_index = dart.privateName(ui, "FontWeight.index");
+  var Color_value = dart.privateName(ui, "Color.value");
+  var PageDecoration_titleTextStyle = dart.privateName(page_decoration, "PageDecoration.titleTextStyle");
+  var PageDecoration_pageColor = dart.privateName(page_decoration, "PageDecoration.pageColor");
+  var Widget__location = dart.privateName(framework, "Widget._location");
+  var Widget_key = dart.privateName(framework, "Widget.key");
+  var Text_textHeightBehavior = dart.privateName(text, "Text.textHeightBehavior");
+  var Text_textWidthBasis = dart.privateName(text, "Text.textWidthBasis");
+  var Text_semanticsLabel = dart.privateName(text, "Text.semanticsLabel");
+  var Text_maxLines = dart.privateName(text, "Text.maxLines");
+  var Text_textScaleFactor = dart.privateName(text, "Text.textScaleFactor");
+  var Text_overflow = dart.privateName(text, "Text.overflow");
+  var Text_softWrap = dart.privateName(text, "Text.softWrap");
+  var Text_locale = dart.privateName(text, "Text.locale");
+  var Text_textDirection = dart.privateName(text, "Text.textDirection");
+  var Text_textAlign = dart.privateName(text, "Text.textAlign");
+  var Text_strutStyle = dart.privateName(text, "Text.strutStyle");
+  var ColorSwatch__swatch = dart.privateName(colors$, "ColorSwatch._swatch");
+  var Text_style = dart.privateName(text, "Text.style");
+  var Text_textSpan = dart.privateName(text, "Text.textSpan");
+  var Text_data = dart.privateName(text, "Text.data");
+  var Icon_textDirection = dart.privateName(icon, "Icon.textDirection");
+  var Icon_semanticLabel = dart.privateName(icon, "Icon.semanticLabel");
+  var Icon_color = dart.privateName(icon, "Icon.color");
+  var Icon_size = dart.privateName(icon, "Icon.size");
+  var IconData_matchTextDirection = dart.privateName(icon_data, "IconData.matchTextDirection");
+  var IconData_fontPackage = dart.privateName(icon_data, "IconData.fontPackage");
+  var IconData_fontFamily = dart.privateName(icon_data, "IconData.fontFamily");
+  var IconData_codePoint = dart.privateName(icon_data, "IconData.codePoint");
+  var Icon_icon = dart.privateName(icon, "Icon.icon");
+  var DotsDecorator_spacing = dart.privateName(dots_decorator, "DotsDecorator.spacing");
+  var _name = dart.privateName(borders, "_name");
+  var BorderSide_style = dart.privateName(borders, "BorderSide.style");
+  var BorderSide_width = dart.privateName(borders, "BorderSide.width");
+  var BorderSide_color = dart.privateName(borders, "BorderSide.color");
+  var OutlinedBorder_side = dart.privateName(borders, "OutlinedBorder.side");
+  var Radius_y = dart.privateName(ui, "Radius.y");
+  var Radius_x = dart.privateName(ui, "Radius.x");
+  var BorderRadius_bottomRight = dart.privateName(border_radius, "BorderRadius.bottomRight");
+  var BorderRadius_bottomLeft = dart.privateName(border_radius, "BorderRadius.bottomLeft");
+  var BorderRadius_topRight = dart.privateName(border_radius, "BorderRadius.topRight");
+  var BorderRadius_topLeft = dart.privateName(border_radius, "BorderRadius.topLeft");
+  var RoundedRectangleBorder_borderRadius = dart.privateName(rounded_rectangle_border, "RoundedRectangleBorder.borderRadius");
+  var DotsDecorator_activeShape = dart.privateName(dots_decorator, "DotsDecorator.activeShape");
+  var DotsDecorator_shape = dart.privateName(dots_decorator, "DotsDecorator.shape");
+  var OffsetBase__dy = dart.privateName(ui, "OffsetBase._dy");
+  var OffsetBase__dx = dart.privateName(ui, "OffsetBase._dx");
+  var DotsDecorator_activeSize = dart.privateName(dots_decorator, "DotsDecorator.activeSize");
+  var DotsDecorator_size = dart.privateName(dots_decorator, "DotsDecorator.size");
+  var DotsDecorator_activeColor = dart.privateName(dots_decorator, "DotsDecorator.activeColor");
+  var DotsDecorator_color = dart.privateName(dots_decorator, "DotsDecorator.color");
+  var ShapeDecoration_shape = dart.privateName(shape_decoration, "ShapeDecoration.shape");
+  var ShapeDecoration_shadows = dart.privateName(shape_decoration, "ShapeDecoration.shadows");
+  var ShapeDecoration_image = dart.privateName(shape_decoration, "ShapeDecoration.image");
+  var ShapeDecoration_gradient = dart.privateName(shape_decoration, "ShapeDecoration.gradient");
+  var ShapeDecoration_color = dart.privateName(shape_decoration, "ShapeDecoration.color");
+  onboarding._OnBoardingPageState = class _OnBoardingPageState extends framework.State$(dart.legacy(onboarding.OnBoardingPage)) {
+    [_onIntroEnd](context) {
+      navigator.Navigator.of(framework.BuildContext.as(context)).pushAndRemoveUntil(dart.dynamic, new page.MaterialPageRoute.new({builder: dart.fn(context => new auth_state.Auth.new({$creationLocationd_0dea112b090073317d4: C[0] || CT.C0}), T.BuildContextLToAuthL())}), dart.fn(route => false, T.RouteLToboolL()));
+    }
+    [_buildImage](assetName, width = 350) {
+      return new image.Image.asset("assets/images/" + dart.str(assetName), {width: width, $creationLocationd_0dea112b090073317d4: C[2] || CT.C2});
+    }
+    build(context) {
+      let bodyStyle = C[6] || CT.C6;
+      let pageDecoration = C[7] || CT.C7;
+      return new introduction_screen.IntroductionScreen.new({key: this.introKey, globalBackgroundColor: colors.Colors.white, pages: T.JSArrayOfPageViewModelL().of([new page_view_model.PageViewModel.new({title: "Welcome to VisitorTracker", body: "A modern solution to register your footprints at public places", image: this[_buildImage]("welcome.png"), decoration: pageDecoration}), new page_view_model.PageViewModel.new({title: "You choose what you need", body: "Use application either as Admin or Visitor depending upon your need", image: this[_buildImage]("both.png"), decoration: pageDecoration}), new page_view_model.PageViewModel.new({title: "Pass your details as Visitor", body: "Enter and locally save your details. Generate and show QR code at public places to mark your footprint", image: this[_buildImage]("ovisitor.png"), decoration: pageDecoration}), new page_view_model.PageViewModel.new({title: "Collect visitor details as Admin", body: "Collect visitor details by scanning their QR code and upload them to the online database", image: this[_buildImage]("oadmin.png"), decoration: pageDecoration}), new page_view_model.PageViewModel.new({title: "Manage and Notify your visitors", body: "Manage your visitors as Admin and send push notifications to the visitors in case of any emergency", image: this[_buildImage]("local-notif.png"), decoration: pageDecoration})]), onDone: dart.fn(() => this[_onIntroEnd](context), T.VoidTovoid()), showSkipButton: true, skipFlex: 0, nextFlex: 0, skip: new ink_well.InkWell.new({child: C[19] || CT.C19, onTap: dart.fn(() => this[_onIntroEnd](context), T.VoidTovoid()), $creationLocationd_0dea112b090073317d4: C[39] || CT.C39}), next: C[43] || CT.C43, done: C[50] || CT.C50, curve: curves.Curves.fastLinearToSlowEaseIn, controlsMargin: C[13] || CT.C13, controlsPadding: true ? C[56] || CT.C56 : C[57] || CT.C57, dotsDecorator: C[58] || CT.C58, dotsContainerDecorator: C[69] || CT.C69, $creationLocationd_0dea112b090073317d4: C[73] || CT.C73});
+    }
+  };
+  (onboarding._OnBoardingPageState.new = function() {
+    this.introKey = T.GlobalKeyOfIntroductionScreenStateL().new();
+    onboarding._OnBoardingPageState.__proto__.new.call(this);
+    ;
+  }).prototype = onboarding._OnBoardingPageState.prototype;
+  dart.addTypeTests(onboarding._OnBoardingPageState);
+  dart.addTypeCaches(onboarding._OnBoardingPageState);
+  dart.setMethodSignature(onboarding._OnBoardingPageState, () => ({
+    __proto__: dart.getMethods(onboarding._OnBoardingPageState.__proto__),
+    [_onIntroEnd]: dart.fnType(dart.void, [dart.dynamic]),
+    [_buildImage]: dart.fnType(dart.legacy(framework.Widget), [dart.legacy(core.String)], [dart.legacy(core.double)]),
+    build: dart.fnType(dart.legacy(framework.Widget), [dart.legacy(framework.BuildContext)])
+  }));
+  dart.setLibraryUri(onboarding._OnBoardingPageState, I[0]);
+  dart.setFieldSignature(onboarding._OnBoardingPageState, () => ({
+    __proto__: dart.getFields(onboarding._OnBoardingPageState.__proto__),
+    introKey: dart.finalFieldType(dart.legacy(framework.GlobalKey$(dart.legacy(introduction_screen.IntroductionScreenState))))
+  }));
+  dart.trackLibraries("packages/visitor_tracker/utils/onboarding.dart", {
+    "package:visitor_tracker/utils/onboarding.dart": onboarding
+  }, {
+  }, '{"version":3,"sourceRoot":"","sources":["onboarding.dart"],"names":[],"mappings":";;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;AASwC;IAAsB;;;;;;EAC9D;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;kBAKmB;AAId,MAHS,AAAY,iDAAT,OAAO,oCAClB,yCAA2B,QAAC,WAAY,+GACxC,QAAC,SAAU;IAEf;kBAE0B,WAAmB;AAC3C,YAAa,uBAAM,AAA0B,4BAAV,SAAS,WAAU,KAAK;IAC7D;UAG0B;AAClB;AAEA;AAYN,YAAO,sDACA,sCACyB,4BACvB,gCACL,8CACS,mCAEH,yEACG,kBAAY,4BACP,cAAc,IAE5B,8CACS,kCAEH,8EACG,kBAAY,yBACP,cAAc,IAE5B,8CACS,sCAEH,iHACG,kBAAY,6BACP,cAAc,IAE5B,8CACS,0CAEH,mGACG,kBAAY,2BACP,cAAc,IAE5B,8CACS,yCAEH,6GACG,kBAAY,gCACP,cAAc,cAGtB,cAAM,kBAAY,OAAO,oCAEjB,gBACN,aACA,SAEJ,yDASG,cAAM,kBAAY,OAAO,oIAapB,wFAEG;IAmBrB;;;IAtHM,gBAAW;;;EAuHnB","file":"../../../../packages/visitor_tracker/utils/onboarding.dart.lib.js"}');
+  // Exports:
+  return {
+    utils__onboarding: onboarding
+  };
+}));
+
+//# sourceMappingURL=onboarding.dart.lib.js.map

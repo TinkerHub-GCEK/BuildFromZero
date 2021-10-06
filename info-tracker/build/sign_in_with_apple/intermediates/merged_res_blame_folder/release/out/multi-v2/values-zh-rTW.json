@@ -1,0 +1,68 @@
+{
+    "logs": [
+        {
+            "outputFile": "C:\\AA-workouts\\Visitor-Tracker\\build\\sign_in_with_apple\\intermediates\\res\\merged\\release\\values-zh-rTW\\values-zh-rTW.xml",
+            "map": [
+                {
+                    "source": "C:\\Users\\Karthik Sunil\\.gradle\\caches\\transforms-2\\files-2.1\\8f4ff03bea5b0cbac84f5cca9661a7c3\\core-1.1.0\\res\\values-zh-rTW\\values-zh-rTW.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "100",
+                        "endOffsets": "151"
+                    },
+                    "to": {
+                        "startLines": "6",
+                        "startColumns": "4",
+                        "startOffsets": "424",
+                        "endColumns": "100",
+                        "endOffsets": "520"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\Karthik Sunil\\.gradle\\caches\\transforms-2\\files-2.1\\ab1585bbecae77d04e275cb1dac25fd0\\browser-1.2.0\\res\\values-zh-rTW\\values-zh-rTW.xml",
+                    "from": {
+                        "startLines": "2,3,4,5",
+                        "startColumns": "4,4,4,4",
+                        "startOffsets": "55,139,231,332",
+                        "endColumns": "83,91,100,91",
+                        "endOffsets": "134,226,327,419"
+                    }
+                }
+            ]
+        },
+        {
+            "outputFile": "C:\\AA-workouts\\Visitor-Tracker\\build\\sign_in_with_apple\\intermediates\\incremental\\mergeReleaseResources\\merged.dir\\values-zh-rTW\\values-zh-rTW.xml",
+            "map": [
+                {
+                    "source": "C:\\Users\\Karthik Sunil\\.gradle\\caches\\transforms-2\\files-2.1\\8f4ff03bea5b0cbac84f5cca9661a7c3\\core-1.1.0\\res\\values-zh-rTW\\values-zh-rTW.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "100",
+                        "endOffsets": "151"
+                    },
+                    "to": {
+                        "startLines": "6",
+                        "startColumns": "4",
+                        "startOffsets": "424",
+                        "endColumns": "100",
+                        "endOffsets": "520"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\Karthik Sunil\\.gradle\\caches\\transforms-2\\files-2.1\\ab1585bbecae77d04e275cb1dac25fd0\\browser-1.2.0\\res\\values-zh-rTW\\values-zh-rTW.xml",
+                    "from": {
+                        "startLines": "2,3,4,5",
+                        "startColumns": "4,4,4,4",
+                        "startOffsets": "55,139,231,332",
+                        "endColumns": "83,91,100,91",
+                        "endOffsets": "134,226,327,419"
+                    }
+                }
+            ]
+        }
+    ]
+}
